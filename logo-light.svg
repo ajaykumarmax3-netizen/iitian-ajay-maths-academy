@@ -1,0 +1,52 @@
+<svg width="420" height="100" viewBox="0 0 420 100" xmlns="http://www.w3.org/2000/svg">
+
+  <!-- Mathematical Book + Graduation Cap -->
+  <g transform="translate(8,10)">
+    
+    <!-- Open Book -->
+    <path d="M10 55 Q30 45 52 55 Q72 45 92 55
+             L92 82 Q72 72 52 82 Q30 72 10 82 Z"
+          fill="#ffffff"
+          stroke="#16a9e8"
+          stroke-width="4"/>
+
+    <!-- Book pages -->
+    <path d="M52 55 L52 82"
+          stroke="#16a9e8"
+          stroke-width="3"/>
+
+    <!-- Graduation Cap -->
+    <polygon points="18,28 52,10 86,28 52,46"
+             fill="#174a87"/>
+
+    <!-- Cap base -->
+    <path d="M30 34 Q52 48 74 34 L74 43 Q52 58 30 43 Z"
+          fill="#0d3d75"/>
+
+    <!-- Tassel -->
+    <line x1="82" y1="27" x2="88" y2="45"
+          stroke="#f4b942"
+          stroke-width="3"/>
+    <circle cx="89" cy="47" r="4"
+            fill="#f4b942"/>
+
+  </g>
+
+  <!-- Academy Name -->
+  <text x="112" y="43"
+        font-family="Georgia, serif"
+        font-size="31"
+        font-weight="700"
+        fill="#174a87">
+    IITian Ajay
+  </text>
+
+  <text x="113" y="72"
+        font-family="Arial, sans-serif"
+        font-size="20"
+        font-weight="600"
+        fill="#149fe3">
+    Maths Academy
+  </text>
+
+</svg>
