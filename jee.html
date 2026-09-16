@@ -1,4 +1,554 @@
-<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>JEE Mathematics | IITian Ajay Maths Academy</title><link rel="stylesheet" href="style.css"></head><body><nav><div class="logo">IITian <b>Ajay</b> Maths Academy</div><div>
-<a href="index.html">Home</a><a href="jee.html">JEE</a><a href="class11.html">Class 11</a><a href="class12.html">Class 12</a><a href="ug.html">UG</a><a href="pg.html">PG</a></div></nav>
-<header class="hero"><h1>JEE Mathematics</h1><p>Choose a topic to explore notes, formulas, proofs, questions and solutions.</p></header>
-<section><div class="notice">🚧 This is the initial website structure. You can gradually add your own original content to every topic.</div><div class="subject-list"><a class="subject" id="algebra" href="article.html?topic=Algebra">Algebra<br><small>Notes • Proofs • Questions →</small></a><a class="subject" id="calculus" href="article.html?topic=Calculus">Calculus<br><small>Notes • Proofs • Questions →</small></a><a class="subject" id="coordinate-geometry" href="article.html?topic=Coordinate%20Geometry">Coordinate Geometry<br><small>Notes • Proofs • Questions →</small></a><a class="subject" id="trigonometry" href="article.html?topic=Trigonometry">Trigonometry<br><small>Notes • Proofs • Questions →</small></a><a class="subject" id="vector-&-3d-geometry" href="article.html?topic=Vector%20&%203D%20Geometry">Vector & 3D Geometry<br><small>Notes • Proofs • Questions →</small></a><a class="subject" id="jee-main-questions" href="article.html?topic=JEE%20Main%20Questions">JEE Main Questions<br><small>Notes • Proofs • Questions →</small></a><a class="subject" id="jee-advanced-problems" href="article.html?topic=JEE%20Advanced%20Problems">JEE Advanced Problems<br><small>Notes • Proofs • Questions →</small></a></div></section><footer><b>IITian Ajay Maths Academy</b><br>Learn • Understand • Solve • Prove<br>© 2026</footer></body></html>
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>JEE Mathematics | IITian Ajay Maths Academy</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f5f8fc;
+      color: #102a43;
+      line-height: 1.6;
+    }
+
+    /* NAVBAR */
+    .jee-nav {
+      background: #061a36;
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 6%;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.18);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .jee-brand {
+      color: white;
+      text-decoration: none;
+      font-size: 22px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .jee-brand span {
+      color: #19b9ee;
+    }
+
+    .jee-links {
+      display: flex;
+      gap: 26px;
+      align-items: center;
+    }
+
+    .jee-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 16px;
+      padding: 12px 0;
+      border-bottom: 3px solid transparent;
+    }
+
+    .jee-links a:hover,
+    .jee-links a.active {
+      color: #20b9ee;
+      border-bottom-color: #20b9ee;
+    }
+
+    /* HERO */
+    .jee-hero {
+      background:
+        radial-gradient(circle at 85% 20%, rgba(25,185,238,.20), transparent 25%),
+        linear-gradient(135deg, #061a36, #0b3970 60%, #075d91);
+      color: white;
+      padding: 75px 6% 70px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .jee-hero::before {
+      content: "∑   π   ∞   √   ∫   x²";
+      position: absolute;
+      top: 25px;
+      right: 5%;
+      font-size: 42px;
+      color: rgba(255,255,255,.08);
+      letter-spacing: 18px;
+    }
+
+    .jee-hero-content {
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .breadcrumb {
+      color: #8bdcf7;
+      font-size: 14px;
+      margin-bottom: 18px;
+    }
+
+    .jee-hero h1 {
+      font-family: Georgia, serif;
+      font-size: clamp(42px, 6vw, 72px);
+      line-height: 1.05;
+      margin-bottom: 18px;
+    }
+
+    .jee-hero h1 span {
+      color: #20c0f0;
+    }
+
+    .jee-hero p {
+      max-width: 720px;
+      color: #d9edf7;
+      font-size: 19px;
+      margin-bottom: 28px;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .hero-tags span {
+      border: 1px solid rgba(255,255,255,.25);
+      background: rgba(255,255,255,.08);
+      padding: 8px 15px;
+      border-radius: 30px;
+      font-size: 14px;
+    }
+
+    /* CONTENT */
+    .jee-content {
+      max-width: 1200px;
+      margin: auto;
+      padding: 65px 6%;
+    }
+
+    .section-heading {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .section-heading h2 {
+      font-size: 38px;
+      color: #082b55;
+      margin-bottom: 8px;
+    }
+
+    .section-heading p {
+      color: #60758a;
+      font-size: 17px;
+    }
+
+    /* TOPIC GRID */
+    .topic-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .topic-card {
+      background: white;
+      border-radius: 18px;
+      padding: 28px;
+      text-decoration: none;
+      color: inherit;
+      border: 1px solid #d9e5ef;
+      box-shadow: 0 8px 25px rgba(10,45,80,.08);
+      transition: .25s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .topic-card::after {
+      content: "";
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      background: #e6f7fd;
+      border-radius: 50%;
+      right: -35px;
+      top: -35px;
+    }
+
+    .topic-card:hover {
+      transform: translateY(-7px);
+      box-shadow: 0 15px 35px rgba(10,45,80,.15);
+      border-color: #19b9ee;
+    }
+
+    .topic-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      background: #0a3970;
+      color: #20c0f0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 25px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .topic-card h3 {
+      color: #082b55;
+      font-size: 22px;
+      margin-bottom: 8px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .topic-card p {
+      color: #687d91;
+      font-size: 15px;
+      margin-bottom: 18px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .topic-arrow {
+      color: #087fc0;
+      font-size: 24px;
+      font-weight: bold;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* SPECIAL JEE CARDS */
+    .exam-card {
+      background: linear-gradient(135deg, #061a36, #0b477f);
+      color: white;
+      border: none;
+    }
+
+    .exam-card h3,
+    .exam-card .topic-arrow {
+      color: white;
+    }
+
+    .exam-card p {
+      color: #c7e6f4;
+    }
+
+    .exam-card .topic-icon {
+      background: rgba(255,255,255,.13);
+      color: #20c0f0;
+    }
+
+    /* NOTICE */
+    .jee-notice {
+      margin-top: 45px;
+      background: #e5f6fc;
+      border-left: 5px solid #11a9df;
+      padding: 20px 24px;
+      border-radius: 10px;
+      color: #17486b;
+    }
+
+    /* FOOTER */
+    .jee-footer {
+      background: #041326;
+      color: white;
+      text-align: center;
+      padding: 45px 20px;
+      margin-top: 20px;
+    }
+
+    .jee-footer h3 {
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    .jee-footer h3 span {
+      color: #20c0f0;
+    }
+
+    .jee-footer p {
+      color: #b9c9d8;
+      margin-top: 8px;
+    }
+
+    /* MOBILE */
+    @media (max-width: 850px) {
+
+      .jee-nav {
+        overflow-x: auto;
+        justify-content: flex-start;
+        gap: 35px;
+      }
+
+      .jee-links {
+        flex-shrink: 0;
+        gap: 22px;
+      }
+
+      .topic-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .jee-hero {
+        padding: 55px 6%;
+      }
+    }
+
+    @media (max-width: 600px) {
+
+      .jee-brand {
+        font-size: 18px;
+      }
+
+      .jee-links a {
+        font-size: 14px;
+      }
+
+      .jee-hero h1 {
+        font-size: 42px;
+      }
+
+      .jee-hero p {
+        font-size: 16px;
+      }
+
+      .topic-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .jee-content {
+        padding: 45px 5%;
+      }
+
+      .section-heading h2 {
+        font-size: 30px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="jee-nav">
+
+    <a href="index.html" class="jee-brand">
+      IITian <span>Ajay</span> Maths Academy
+    </a>
+
+    <div class="jee-links">
+      <a href="index.html">Home</a>
+      <a href="jee.html" class="active">JEE</a>
+      <a href="class11.html">Class 11</a>
+      <a href="class12.html">Class 12</a>
+      <a href="ug.html">UG</a>
+      <a href="pg.html">PG</a>
+    </div>
+
+  </nav>
+
+
+  <!-- HERO -->
+  <header class="jee-hero">
+
+    <div class="jee-hero-content">
+
+      <div class="breadcrumb">
+        Home → JEE Mathematics
+      </div>
+
+      <h1>
+        JEE <span>Mathematics</span>
+      </h1>
+
+      <p>
+        Build strong concepts, master problem solving and prepare
+        systematically for JEE Main and JEE Advanced Mathematics.
+      </p>
+
+      <div class="hero-tags">
+        <span>Concepts</span>
+        <span>Formulas</span>
+        <span>Problems</span>
+        <span>JEE Main</span>
+        <span>JEE Advanced</span>
+      </div>
+
+    </div>
+
+  </header>
+
+
+  <!-- TOPICS -->
+  <main class="jee-content">
+
+    <div class="section-heading">
+      <h2>Explore JEE Mathematics</h2>
+      <p>
+        Choose a topic and start learning step by step.
+      </p>
+    </div>
+
+
+    <div class="topic-grid">
+
+      <a class="topic-card" href="article.html?topic=Algebra">
+
+        <div class="topic-icon">∑</div>
+
+        <h3>Algebra</h3>
+
+        <p>
+          Equations, sequences, series, complex numbers,
+          matrices, determinants and more.
+        </p>
+
+        <div class="topic-arrow">Explore →</div>
+
+      </a>
+
+
+      <a class="topic-card" href="article.html?topic=Calculus">
+
+        <div class="topic-icon">∫</div>
+
+        <h3>Calculus</h3>
+
+        <p>
+          Limits, continuity, differentiation,
+          integration and applications.
+        </p>
+
+        <div class="topic-arrow">Explore →</div>
+
+      </a>
+
+
+      <a class="topic-card" href="article.html?topic=Coordinate%20Geometry">
+
+        <div class="topic-icon">x²</div>
+
+        <h3>Coordinate Geometry</h3>
+
+        <p>
+          Straight lines, circles, conics and
+          important JEE problem-solving techniques.
+        </p>
+
+        <div class="topic-arrow">Explore →</div>
+
+      </a>
+
+
+      <a class="topic-card" href="article.html?topic=Trigonometry">
+
+        <div class="topic-icon">θ</div>
+
+        <h3>Trigonometry</h3>
+
+        <p>
+          Identities, equations, functions,
+          graphs and applications.
+        </p>
+
+        <div class="topic-arrow">Explore →</div>
+
+      </a>
+
+
+      <a class="topic-card" href="article.html?topic=Vector%20%26%203D%20Geometry">
+
+        <div class="topic-icon">→</div>
+
+        <h3>Vector & 3D Geometry</h3>
+
+        <p>
+          Vectors, lines, planes, distances,
+          angles and 3D applications.
+        </p>
+
+        <div class="topic-arrow">Explore →</div>
+
+      </a>
+
+
+      <a class="topic-card exam-card"
+         href="article.html?topic=JEE%20Main%20Questions">
+
+        <div class="topic-icon">M</div>
+
+        <h3>JEE Main Questions</h3>
+
+        <p>
+          Practice-oriented questions with
+          detailed step-by-step solutions.
+        </p>
+
+        <div class="topic-arrow">Practice →</div>
+
+      </a>
+
+
+      <a class="topic-card exam-card"
+         href="article.html?topic=JEE%20Advanced%20Problems">
+
+        <div class="topic-icon">A</div>
+
+        <h3>JEE Advanced Problems</h3>
+
+        <p>
+          Challenging problems designed to develop
+          deeper mathematical thinking.
+        </p>
+
+        <div class="topic-arrow">Challenge →</div>
+
+      </a>
+
+    </div>
+
+
+    <div class="jee-notice">
+      <strong>📚 What's coming here?</strong><br>
+      Complete topic-wise notes, important formulas,
+      solved examples, previous-year questions and
+      detailed step-by-step solutions will be added gradually.
+    </div>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer class="jee-footer">
+
+    <h3>
+      IITian <span>Ajay</span> Maths Academy
+    </h3>
+
+    <p>
+      Learn • Understand • Solve • Prove
+    </p>
+
+    <p>
+      © 2026 IITian Ajay Maths Academy
+    </p>
+
+  </footer>
+
+</body>
+</html>
