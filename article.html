@@ -7,7 +7,258 @@
 
   <title>Algebra | IITian Ajay Maths Academy</title>
 
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css"><style>
+/* ===== ARTICLE PAGE FIX ===== */
+
+body{
+  margin:0 !important;
+  font-family:Arial,Helvetica,sans-serif !important;
+  background:#f5f8fc !important;
+  color:#172033 !important;
+}
+
+/* NAVBAR */
+body > nav{
+  background:#061a36 !important;
+  color:white !important;
+  padding:18px 7% !important;
+  display:flex !important;
+  justify-content:space-between !important;
+  align-items:center !important;
+  gap:20px !important;
+  box-shadow:0 4px 18px rgba(0,0,0,.18) !important;
+}
+
+nav .logo{
+  color:white !important;
+  font-size:21px !important;
+  font-weight:700 !important;
+}
+
+nav .logo b{
+  color:#16a9e8 !important;
+}
+
+nav a{
+  color:#dce8f5 !important;
+  text-decoration:none !important;
+  padding:9px 12px !important;
+  border-radius:7px !important;
+}
+
+nav a:hover{
+  background:#123a68 !important;
+  color:white !important;
+}
+
+/* HERO */
+.topic-hero{
+  background:
+    radial-gradient(circle at 15% 20%,rgba(22,169,232,.18),transparent 28%),
+    radial-gradient(circle at 85% 80%,rgba(66,133,244,.15),transparent 30%),
+    linear-gradient(135deg,#061a36,#0b2d55) !important;
+  color:white !important;
+  padding:75px 20px !important;
+  text-align:center !important;
+}
+
+.topic-hero h1{
+  color:white !important;
+  font-size:48px !important;
+  margin:15px 0 !important;
+}
+
+.topic-hero p{
+  color:#c9d9ea !important;
+  max-width:700px !important;
+  margin:auto !important;
+  line-height:1.7 !important;
+}
+
+.topic-tag{
+  background:#16a9e8 !important;
+  color:white !important;
+  padding:7px 15px !important;
+  border-radius:20px !important;
+  font-size:13px !important;
+  font-weight:bold !important;
+}
+
+/* BREADCRUMB */
+.topic-breadcrumb{
+  max-width:1150px !important;
+  margin:auto !important;
+  padding:22px !important;
+  color:#64748b !important;
+}
+
+.topic-breadcrumb a{
+  color:#147db3 !important;
+}
+
+/* MAIN */
+.study-layout{
+  max-width:1150px !important;
+  margin:auto !important;
+  padding:10px 22px 60px !important;
+}
+
+/* SIDEBAR */
+.topics-sidebar{
+  background:#061a36 !important;
+  color:white !important;
+  border-radius:14px !important;
+  padding:22px !important;
+}
+
+.topics-sidebar h3{
+  color:white !important;
+}
+
+.topics-sidebar a{
+  display:block !important;
+  color:#dce8f5 !important;
+  text-decoration:none !important;
+  padding:10px !important;
+  border-radius:7px !important;
+}
+
+.topics-sidebar a:hover,
+.topics-sidebar .active-topic{
+  background:#123a68 !important;
+  color:#fff !important;
+}
+
+/* CONTENT BOXES */
+.content-box,
+.chapter-intro{
+  background:white !important;
+  color:#172033 !important;
+  border:1px solid #dbe5ef !important;
+  border-radius:14px !important;
+  padding:28px !important;
+  margin-bottom:25px !important;
+  box-shadow:0 7px 22px rgba(20,50,80,.07) !important;
+}
+
+.content-box h2,
+.chapter-intro h2{
+  color:#10233f !important;
+}
+
+.content-box p,
+.chapter-intro p{
+  color:#475569 !important;
+}
+
+/* TABS */
+.resource-tabs{
+  display:flex !important;
+  flex-wrap:wrap !important;
+  gap:10px !important;
+  margin:20px 0 !important;
+}
+
+.resource-tabs a{
+  background:#061a36 !important;
+  color:white !important;
+  padding:10px 15px !important;
+  border-radius:8px !important;
+  text-decoration:none !important;
+}
+
+/* RESOURCE ITEMS */
+.resource-item{
+  color:#172033 !important;
+  border-bottom:1px solid #e2e8f0 !important;
+  padding:13px 0 !important;
+}
+
+.resource-item span{
+  color:#172033 !important;
+}
+
+.resource-item button,
+.section-heading button{
+  background:#16a9e8 !important;
+  color:white !important;
+  border:0 !important;
+  padding:9px 15px !important;
+  border-radius:7px !important;
+}
+
+/* ACCORDION */
+.accordion-item{
+  color:#172033 !important;
+  background:#f8fafc !important;
+  border:1px solid #dbe5ef !important;
+  padding:16px !important;
+  margin:10px 0 !important;
+  border-radius:8px !important;
+}
+
+.accordion-item span{
+  color:#147db3 !important;
+}
+
+/* QUESTION CARDS — IMPORTANT FIX */
+.question-levels{
+  display:grid !important;
+  grid-template-columns:repeat(2,1fr) !important;
+  gap:20px !important;
+}
+
+.level-card{
+  background:white !important;
+  color:#172033 !important;
+  border:1px solid #dbe5ef !important;
+  border-radius:14px !important;
+  padding:28px !important;
+  min-height:130px !important;
+  box-shadow:0 7px 22px rgba(20,50,80,.07) !important;
+}
+
+.level-card h3{
+  color:#10233f !important;
+  margin-top:0 !important;
+}
+
+.level-card p{
+  color:#64748b !important;
+}
+
+/* FOOTER */
+body > footer{
+  background:#061a36 !important;
+  color:#c9d9ea !important;
+  text-align:center !important;
+  padding:35px 20px !important;
+}
+
+body > footer b{
+  color:white !important;
+}
+
+/* MOBILE */
+@media(max-width:700px){
+  body > nav{
+    flex-direction:column !important;
+    padding:16px 4% !important;
+  }
+
+  .topic-hero h1{
+    font-size:36px !important;
+  }
+
+  .question-levels{
+    grid-template-columns:1fr !important;
+  }
+
+  .study-layout{
+    padding:10px 12px 50px !important;
+  }
+}
+  </style>
 </head>
 
 <body>
