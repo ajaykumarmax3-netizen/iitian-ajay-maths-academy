@@ -1,4 +1,571 @@
-<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Class 12 Mathematics | IITian Ajay Maths Academy</title><link rel="stylesheet" href="style.css"></head><body><nav><div class="logo">IITian <b>Ajay</b> Maths Academy</div><div>
-<a href="index.html">Home</a><a href="jee.html">JEE</a><a href="class11.html">Class 11</a><a href="class12.html">Class 12</a><a href="ug.html">UG</a><a href="pg.html">PG</a></div></nav>
-<header class="hero"><h1>Class 12 Mathematics</h1><p>Choose a topic to explore notes, formulas, proofs, questions and solutions.</p></header>
-<section><div class="notice">🚧 This is the initial website structure. You can gradually add your own original content to every topic.</div><div class="subject-list"><a class="subject" id="relations-&-functions" href="article.html?topic=Relations%20&%20Functions">Relations & Functions<br><small>Notes • Proofs • Questions →</small></a><a class="subject" id="inverse-trigonometric-functions" href="article.html?topic=Inverse%20Trigonometric%20Functions">Inverse Trigonometric Functions<br><small>Notes • Proofs • Questions →</small></a><a class="subject" id="matrices" href="article.html?topic=Matrices">Matrices<br><small>Notes • Proofs • Questions →</small></a><a class="subject" id="determinants" href="article.html?topic=Determinants">Determinants<br><small>Notes • Proofs • Questions →</small></a><a class="subject" id="continuity-&-differentiability" href="article.html?topic=Continuity%20&%20Differentiability">Continuity & Differentiability<br><small>Notes • Proofs • Questions →</small></a><a class="subject" id="applications-of-derivatives" href="article.html?topic=Applications%20of%20Derivatives">Applications of Derivatives<br><small>Notes • Proofs • Questions →</small></a><a class="subject" id="integrals" href="article.html?topic=Integrals">Integrals<br><small>Notes • Proofs • Questions →</small></a><a class="subject" id="differential-equations" href="article.html?topic=Differential%20Equations">Differential Equations<br><small>Notes • Proofs • Questions →</small></a><a class="subject" id="vectors-&-3d-geometry" href="article.html?topic=Vectors%20&%203D%20Geometry">Vectors & 3D Geometry<br><small>Notes • Proofs • Questions →</small></a><a class="subject" id="probability" href="article.html?topic=Probability">Probability<br><small>Notes • Proofs • Questions →</small></a></div></section><footer><b>IITian Ajay Maths Academy</b><br>Learn • Understand • Solve • Prove<br>© 2026</footer></body></html>
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Class 12 Mathematics | IITian Ajay Maths Academy</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f5f8fc;
+      color: #102a43;
+      line-height: 1.6;
+    }
+
+    /* NAVBAR */
+    .level-nav {
+      background: #061a36;
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 6%;
+      box-shadow: 0 4px 18px rgba(0,0,0,.18);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .level-brand {
+      color: white;
+      text-decoration: none;
+      font-size: 22px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .level-brand span {
+      color: #19b9ee;
+    }
+
+    .level-links {
+      display: flex;
+      gap: 26px;
+      align-items: center;
+    }
+
+    .level-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 16px;
+      padding: 12px 0;
+      border-bottom: 3px solid transparent;
+    }
+
+    .level-links a:hover,
+    .level-links a.active {
+      color: #20b9ee;
+      border-bottom-color: #20b9ee;
+    }
+
+    /* HERO */
+    .level-hero {
+      background:
+        radial-gradient(circle at 85% 20%, rgba(25,185,238,.20), transparent 25%),
+        linear-gradient(135deg, #061a36, #0b3970 60%, #075d91);
+      color: white;
+      padding: 70px 6%;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .level-hero::before {
+      content: "∑   π   ∞   √   ∫   x²";
+      position: absolute;
+      top: 25px;
+      right: 5%;
+      font-size: 42px;
+      color: rgba(255,255,255,.08);
+      letter-spacing: 18px;
+    }
+
+    .level-hero-content {
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .breadcrumb {
+      color: #8bdcf7;
+      font-size: 14px;
+      margin-bottom: 18px;
+    }
+
+    .level-hero h1 {
+      font-family: Georgia, serif;
+      font-size: clamp(42px, 6vw, 70px);
+      line-height: 1.05;
+      margin-bottom: 18px;
+    }
+
+    .level-hero h1 span {
+      color: #20c0f0;
+    }
+
+    .level-hero p {
+      max-width: 750px;
+      color: #d9edf7;
+      font-size: 19px;
+      margin-bottom: 28px;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .hero-tags span {
+      border: 1px solid rgba(255,255,255,.25);
+      background: rgba(255,255,255,.08);
+      padding: 8px 15px;
+      border-radius: 30px;
+      font-size: 14px;
+    }
+
+    /* CONTENT */
+    .level-content {
+      max-width: 1200px;
+      margin: auto;
+      padding: 65px 6%;
+    }
+
+    .section-heading {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .section-heading h2 {
+      font-size: 38px;
+      color: #082b55;
+      margin-bottom: 8px;
+    }
+
+    .section-heading p {
+      color: #60758a;
+      font-size: 17px;
+    }
+
+    /* TOPICS */
+    .topic-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .topic-card {
+      background: white;
+      border-radius: 18px;
+      padding: 28px;
+      text-decoration: none;
+      color: inherit;
+      border: 1px solid #d9e5ef;
+      box-shadow: 0 8px 25px rgba(10,45,80,.08);
+      transition: .25s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .topic-card::after {
+      content: "";
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      background: #e6f7fd;
+      border-radius: 50%;
+      right: -35px;
+      top: -35px;
+    }
+
+    .topic-card:hover {
+      transform: translateY(-7px);
+      box-shadow: 0 15px 35px rgba(10,45,80,.15);
+      border-color: #19b9ee;
+    }
+
+    .topic-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      background: #0a3970;
+      color: #20c0f0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .topic-card h3 {
+      color: #082b55;
+      font-size: 21px;
+      margin-bottom: 8px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .topic-card p {
+      color: #687d91;
+      font-size: 15px;
+      margin-bottom: 18px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .topic-arrow {
+      color: #087fc0;
+      font-size: 16px;
+      font-weight: bold;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* FOOTER */
+    .level-footer {
+      background: #041326;
+      color: white;
+      text-align: center;
+      padding: 45px 20px;
+      margin-top: 20px;
+    }
+
+    .level-footer h3 {
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    .level-footer h3 span {
+      color: #20c0f0;
+    }
+
+    .level-footer p {
+      color: #b9c9d8;
+      margin-top: 8px;
+    }
+
+    /* MOBILE */
+    @media (max-width: 850px) {
+
+      .level-nav {
+        overflow-x: auto;
+        justify-content: flex-start;
+        gap: 35px;
+      }
+
+      .level-links {
+        flex-shrink: 0;
+        gap: 22px;
+      }
+
+      .topic-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+
+      .level-brand {
+        font-size: 18px;
+      }
+
+      .level-links a {
+        font-size: 14px;
+      }
+
+      .level-hero {
+        padding: 55px 6%;
+      }
+
+      .level-hero h1 {
+        font-size: 42px;
+      }
+
+      .level-hero p {
+        font-size: 16px;
+      }
+
+      .topic-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .level-content {
+        padding: 45px 5%;
+      }
+
+      .section-heading h2 {
+        font-size: 30px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="level-nav">
+
+    <a href="index.html" class="level-brand">
+      IITian <span>Ajay</span> Maths Academy
+    </a>
+
+    <div class="level-links">
+      <a href="index.html">Home</a>
+      <a href="jee.html">JEE</a>
+      <a href="class11.html">Class 11</a>
+      <a href="class12.html" class="active">Class 12</a>
+      <a href="ug.html">UG</a>
+      <a href="pg.html">PG</a>
+    </div>
+
+  </nav>
+
+
+  <!-- HERO -->
+  <header class="level-hero">
+
+    <div class="level-hero-content">
+
+      <div class="breadcrumb">
+        Home → Class 12 Mathematics
+      </div>
+
+      <h1>
+        Class 12 <span>Mathematics</span>
+      </h1>
+
+      <p>
+        Strengthen your mathematical concepts with clear theory,
+        important formulas, solved examples and systematic practice.
+      </p>
+
+      <div class="hero-tags">
+        <span>Concepts</span>
+        <span>Definitions</span>
+        <span>Formulas</span>
+        <span>Examples</span>
+        <span>Practice</span>
+      </div>
+
+    </div>
+
+  </header>
+
+
+  <!-- TOPICS -->
+  <main class="level-content">
+
+    <div class="section-heading">
+      <h2>Explore Class 12 Mathematics</h2>
+      <p>
+        Choose a topic and start learning step by step.
+      </p>
+    </div>
+
+
+    <div class="topic-grid">
+
+      <a class="topic-card"
+         href="article.html?topic=Relations%20%26%20Functions">
+
+        <div class="topic-icon">f</div>
+
+        <h3>Relations & Functions</h3>
+
+        <p>
+          Relations, functions, types of functions,
+          composition and important concepts.
+        </p>
+
+        <div class="topic-arrow">Explore →</div>
+
+      </a>
+
+
+      <a class="topic-card"
+         href="article.html?topic=Inverse%20Trigonometric%20Functions">
+
+        <div class="topic-icon">θ</div>
+
+        <h3>Inverse Trigonometric Functions</h3>
+
+        <p>
+          Inverse functions, principal values,
+          identities and important results.
+        </p>
+
+        <div class="topic-arrow">Explore →</div>
+
+      </a>
+
+
+      <a class="topic-card"
+         href="article.html?topic=Matrices">
+
+        <div class="topic-icon">A</div>
+
+        <h3>Matrices</h3>
+
+        <p>
+          Types of matrices, operations,
+          transpose and important properties.
+        </p>
+
+        <div class="topic-arrow">Explore →</div>
+
+      </a>
+
+
+      <a class="topic-card"
+         href="article.html?topic=Determinants">
+
+        <div class="topic-icon">|A|</div>
+
+        <h3>Determinants</h3>
+
+        <p>
+          Determinants, properties, minors,
+          cofactors and applications.
+        </p>
+
+        <div class="topic-arrow">Explore →</div>
+
+      </a>
+
+
+      <a class="topic-card"
+         href="article.html?topic=Continuity%20%26%20Differentiability">
+
+        <div class="topic-icon">δ</div>
+
+        <h3>Continuity & Differentiability</h3>
+
+        <p>
+          Continuity, differentiability,
+          derivatives and important results.
+        </p>
+
+        <div class="topic-arrow">Explore →</div>
+
+      </a>
+
+
+      <a class="topic-card"
+         href="article.html?topic=Applications%20of%20Derivatives">
+
+        <div class="topic-icon">f′</div>
+
+        <h3>Applications of Derivatives</h3>
+
+        <p>
+          Increasing and decreasing functions,
+          maxima, minima and related applications.
+        </p>
+
+        <div class="topic-arrow">Explore →</div>
+
+      </a>
+
+
+      <a class="topic-card"
+         href="article.html?topic=Integrals">
+
+        <div class="topic-icon">∫</div>
+
+        <h3>Integrals</h3>
+
+        <p>
+          Indefinite and definite integrals,
+          techniques and important properties.
+        </p>
+
+        <div class="topic-arrow">Explore →</div>
+
+      </a>
+
+
+      <a class="topic-card"
+         href="article.html?topic=Differential%20Equations">
+
+        <div class="topic-icon">dy</div>
+
+        <h3>Differential Equations</h3>
+
+        <p>
+          Formation, order, degree and
+          methods of solving differential equations.
+        </p>
+
+        <div class="topic-arrow">Explore →</div>
+
+      </a>
+
+
+      <a class="topic-card"
+         href="article.html?topic=Vectors%20%26%203D%20Geometry">
+
+        <div class="topic-icon">→</div>
+
+        <h3>Vectors & 3D Geometry</h3>
+
+        <p>
+          Vectors, lines, planes, distances,
+          angles and three-dimensional geometry.
+        </p>
+
+        <div class="topic-arrow">Explore →</div>
+
+      </a>
+
+
+      <a class="topic-card"
+         href="article.html?topic=Probability">
+
+        <div class="topic-icon">P</div>
+
+        <h3>Probability</h3>
+
+        <p>
+          Conditional probability, independence,
+          Bayes' theorem and important problems.
+        </p>
+
+        <div class="topic-arrow">Explore →</div>
+
+      </a>
+
+    </div>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer class="level-footer">
+
+    <h3>
+      IITian <span>Ajay</span> Maths Academy
+    </h3>
+
+    <p>
+      Learn • Understand • Solve • Prove
+    </p>
+
+    <p>
+      © 2026 IITian Ajay Maths Academy
+    </p>
+
+  </footer>
+
+</body>
+</html>
