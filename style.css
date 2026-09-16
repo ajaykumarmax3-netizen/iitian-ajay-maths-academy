@@ -18,6 +18,7 @@
   --shadow: 0 12px 35px rgba(7, 29, 59, 0.12);
 }
 
+
 /* ================= BASIC ================= */
 
 * {
@@ -47,32 +48,40 @@ input {
   font: inherit;
 }
 
+
 /* ================= NAVBAR ================= */
 
 .main-nav {
-  height: 82px;
+  height: 78px;
   background: var(--navy);
   display: flex;
   align-items: center;
   padding: 0 5%;
-  gap: 35px;
+  gap: 30px;
   position: sticky;
   top: 0;
   z-index: 1000;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.18);
 }
 
+
+/* NEW LOGO */
+
 .brand {
   display: flex;
   align-items: center;
-  min-width: 265px;
+  min-width: 90px;
 }
 
 .brand img {
-  width: 245px;
-  max-height: 65px;
+  width: 72px;
+  height: 72px;
   object-fit: contain;
+  border-radius: 12px;
 }
+
+
+/* NAVIGATION LINKS */
 
 .nav-links {
   display: flex;
@@ -110,6 +119,9 @@ input {
   border-radius: 10px;
 }
 
+
+/* NAV SEARCH */
+
 .nav-search {
   background: #ffffff;
   color: #71849a;
@@ -124,48 +136,70 @@ input {
   box-shadow: 0 5px 18px rgba(0, 0, 0, 0.12);
 }
 
+
 /* ================= HERO ================= */
 
 .home-hero {
-  min-height: 510px;
+  height: 330px;
+  min-height: 330px;
   position: relative;
   overflow: hidden;
+
   background:
-    radial-gradient(circle at 85% 25%, rgba(24, 183, 232, 0.22), transparent 25%),
-    radial-gradient(circle at 15% 80%, rgba(17, 103, 216, 0.20), transparent 28%),
-    linear-gradient(135deg, #071d3b 0%, #0b3972 48%, #075f9d 100%);
+    radial-gradient(
+      circle at 85% 25%,
+      rgba(24, 183, 232, 0.22),
+      transparent 25%
+    ),
+    radial-gradient(
+      circle at 15% 80%,
+      rgba(17, 103, 216, 0.20),
+      transparent 28%
+    ),
+    linear-gradient(
+      135deg,
+      #071d3b 0%,
+      #0b3972 48%,
+      #075f9d 100%
+    );
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   color: white;
-  padding: 65px 7%;
+  padding: 25px 7%;
 }
 
-/* decorative mathematics */
+
+/* DECORATIVE MATHEMATICS */
 
 .home-hero::before {
   content: "∫   ∑   π   ∞   √x   ∂   λ";
   position: absolute;
-  top: 25px;
+  top: 18px;
   left: 0;
   width: 100%;
   text-align: center;
   color: rgba(255, 255, 255, 0.08);
-  font-size: 38px;
-  letter-spacing: 25px;
+  font-size: 30px;
+  letter-spacing: 20px;
   pointer-events: none;
 }
 
 .home-hero::after {
   content: "";
   position: absolute;
-  width: 420px;
-  height: 420px;
+  width: 360px;
+  height: 360px;
   border: 1px solid rgba(255,255,255,0.12);
   border-radius: 50%;
-  right: -170px;
-  bottom: -220px;
+  right: -150px;
+  bottom: -190px;
 }
+
+
+/* HERO CENTER */
 
 .hero-center {
   text-align: center;
@@ -174,20 +208,26 @@ input {
   max-width: 800px;
 }
 
+
+/* SUM SYMBOL */
+
 .hero-symbol {
-  font-size: 58px;
+  font-size: 42px;
   font-weight: 700;
   color: var(--cyan);
   line-height: 1;
-  margin-bottom: 8px;
+  margin-bottom: 5px;
   text-shadow: 0 0 25px rgba(24,183,232,0.35);
 }
 
+
+/* HERO TITLE */
+
 .hero-center h1 {
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(45px, 6vw, 78px);
+  font-size: clamp(38px, 4.5vw, 58px);
   line-height: 1.05;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
   color: white;
   letter-spacing: -1px;
 }
@@ -196,26 +236,32 @@ input {
   display: block;
   color: var(--cyan);
   font-size: 0.58em;
-  margin-top: 8px;
+  margin-top: 6px;
   letter-spacing: 1px;
 }
 
+
+/* HERO POINTS */
+
 .hero-points {
-  font-size: 16px;
+  font-size: 15px;
   color: #dceeff;
-  margin: 20px 0 28px;
+  margin: 10px 0 16px;
   letter-spacing: 0.5px;
 }
 
+
+/* HERO SEARCH */
+
 .hero-search {
-  width: min(690px, 90vw);
-  height: 62px;
+  width: min(620px, 85vw);
+  height: 52px;
   background: white;
-  border-radius: 35px;
+  border-radius: 30px;
   display: flex;
   align-items: center;
-  padding: 6px 8px 6px 22px;
-  box-shadow: 0 15px 45px rgba(0,0,0,0.25);
+  padding: 5px 7px 5px 18px;
+  box-shadow: 0 12px 35px rgba(0,0,0,0.22);
 }
 
 .hero-search input {
@@ -225,18 +271,18 @@ input {
   height: 100%;
   padding: 0 15px;
   color: var(--text);
-  font-size: 16px;
+  font-size: 15px;
   background: transparent;
 }
 
 .hero-search button {
   border: none;
-  width: 50px;
-  height: 50px;
+  width: 42px;
+  height: 42px;
   border-radius: 50%;
   background: var(--blue);
   color: white;
-  font-size: 25px;
+  font-size: 21px;
   cursor: pointer;
   transition: 0.25s ease;
 }
@@ -246,40 +292,42 @@ input {
   transform: translateX(2px);
 }
 
-/* side quote */
+
+/* SIDE QUOTE */
 
 .hero-side-text {
   position: absolute;
   left: 5%;
   top: 50%;
   transform: translateY(-50%);
-  width: 210px;
+  width: 180px;
   color: #d8edff;
   font-family: Georgia, serif;
-  font-size: 18px;
-  line-height: 1.6;
+  font-size: 15px;
+  line-height: 1.5;
   font-style: italic;
   z-index: 2;
 }
 
-/* mathematics illustration */
+
+/* MATHEMATICS ILLUSTRATION */
 
 .math-art {
   position: absolute;
   right: 5%;
-  bottom: 45px;
-  width: 230px;
-  height: 220px;
+  bottom: 20px;
+  width: 170px;
+  height: 160px;
   color: var(--cyan);
   z-index: 2;
 }
 
 .math-books {
   position: absolute;
-  right: 10px;
+  right: 5px;
   bottom: 5px;
-  font-size: 85px;
-  filter: drop-shadow(0 12px 10px rgba(0,0,0,0.25));
+  font-size: 65px;
+  filter: drop-shadow(0 10px 8px rgba(0,0,0,0.25));
 }
 
 .math-symbol {
@@ -287,7 +335,7 @@ input {
   left: 15px;
   top: 20px;
   font-family: Georgia, serif;
-  font-size: 45px;
+  font-size: 40px;
   color: #ffffff;
 }
 
@@ -296,19 +344,20 @@ input {
   right: 0;
   top: 35px;
   font-family: Georgia, serif;
-  font-size: 25px;
+  font-size: 21px;
   color: #dff7ff;
   font-style: italic;
 }
 
 .graph {
   position: absolute;
-  left: 25px;
-  bottom: 10px;
+  left: 20px;
+  bottom: 5px;
   font-family: monospace;
   color: #bceeff;
-  font-size: 17px;
+  font-size: 15px;
 }
+
 
 /* ================= EXPLORE ================= */
 
@@ -343,6 +392,7 @@ input {
   margin: 8px 0 42px;
   font-size: 17px;
 }
+
 
 /* ================= LEVEL CARDS ================= */
 
@@ -445,6 +495,7 @@ input {
   font-size: 21px;
 }
 
+
 /* ================= FEATURED ================= */
 
 .featured-section {
@@ -534,6 +585,7 @@ input {
   font-weight: bold;
 }
 
+
 /* ================= MOTIVATION ================= */
 
 .dream-card {
@@ -541,7 +593,11 @@ input {
   padding: 35px 28px;
   color: white;
   background:
-    radial-gradient(circle at 90% 90%, rgba(24,183,232,0.35), transparent 30%),
+    radial-gradient(
+      circle at 90% 90%,
+      rgba(24,183,232,0.35),
+      transparent 30%
+    ),
     linear-gradient(150deg, #071d3b, #1167d8);
   position: relative;
   overflow: hidden;
@@ -576,6 +632,7 @@ input {
   color: rgba(255,255,255,0.10);
 }
 
+
 /* ================= STATS ================= */
 
 .stats-section {
@@ -607,6 +664,7 @@ input {
   font-size: 14px;
 }
 
+
 /* ================= FOOTER ================= */
 
 footer {
@@ -624,10 +682,14 @@ footer {
   margin-bottom: 25px;
 }
 
+
+/* NEW LOGO IN FOOTER */
+
 .footer-brand img {
-  width: 220px;
-  max-height: 65px;
+  width: 90px;
+  height: 90px;
   object-fit: contain;
+  border-radius: 14px;
 }
 
 .footer-brand b {
@@ -658,6 +720,7 @@ footer p {
   font-size: 13px;
   line-height: 1.8;
 }
+
 
 /* =========================================================
    ARTICLE / TOPIC PAGE
@@ -757,7 +820,8 @@ footer p {
   border-radius: 8px;
 }
 
-/* tabs */
+
+/* TABS */
 
 .article-tabs {
   display: flex;
@@ -781,7 +845,10 @@ footer p {
   color: white;
 }
 
-/* ================= RESPONSIVE ================= */
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
 
 @media (max-width: 1050px) {
 
@@ -791,11 +858,12 @@ footer p {
   }
 
   .brand {
-    min-width: 210px;
+    min-width: 85px;
   }
 
   .brand img {
-    width: 205px;
+    width: 68px;
+    height: 68px;
   }
 
   .nav-links {
@@ -823,6 +891,9 @@ footer p {
   }
 }
 
+
+/* ================= TABLET / MOBILE ================= */
+
 @media (max-width: 800px) {
 
   .main-nav {
@@ -830,7 +901,7 @@ footer p {
     min-height: 75px;
     flex-wrap: wrap;
     justify-content: center;
-    padding: 12px 20px;
+    padding: 10px 20px;
   }
 
   .brand {
@@ -838,7 +909,8 @@ footer p {
   }
 
   .brand img {
-    width: 210px;
+    width: 65px;
+    height: 65px;
   }
 
   .nav-links {
@@ -862,9 +934,40 @@ footer p {
     width: 190px;
   }
 
+
+  /* COMPACT MOBILE HERO */
+
   .home-hero {
-    min-height: 540px;
-    padding: 60px 20px;
+    min-height: 380px;
+    height: 380px;
+    padding: 35px 20px;
+  }
+
+  .hero-center {
+    width: 100%;
+  }
+
+  .hero-center h1 {
+    font-size: 40px;
+  }
+
+  .hero-symbol {
+    font-size: 38px;
+  }
+
+  .hero-points {
+    font-size: 14px;
+    margin: 10px 0 15px;
+  }
+
+  .hero-search {
+    width: 90vw;
+    height: 50px;
+  }
+
+  .hero-search button {
+    width: 40px;
+    height: 40px;
   }
 
   .math-art {
@@ -895,6 +998,9 @@ footer p {
     grid-template-columns: 1fr;
   }
 }
+
+
+/* ================= SMALL MOBILE ================= */
 
 @media (max-width: 550px) {
 
@@ -933,16 +1039,23 @@ footer p {
     font-size: 27px;
   }
 
+
+  /* SMALLER HERO */
+
   .hero-center h1 {
-    font-size: 43px;
+    font-size: 36px;
   }
 
   .hero-symbol {
-    font-size: 45px;
+    font-size: 35px;
+  }
+
+  .hero-points {
+    font-size: 13px;
   }
 
   .hero-search {
-    height: 56px;
+    height: 50px;
   }
 
   .article-content {
@@ -952,4 +1065,5 @@ footer p {
   .article-hero h1 {
     font-size: 35px;
   }
+
 }
