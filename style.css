@@ -1067,3 +1067,180 @@ footer p {
   }
 
 }
+/* =========================================
+   STEP 2 — COMPACT HERO SECTION
+   ========================================= */
+
+.home-hero {
+  min-height: 430px;
+  height: 430px;
+  padding: 45px 7% 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Left quote */
+.hero-side-text {
+  font-size: 19px;
+  line-height: 1.45;
+  max-width: 190px;
+  position: absolute;
+  left: 5%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Main hero content */
+.hero-center {
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  margin-top: -5px;
+}
+
+/* Sigma */
+.hero-symbol {
+  font-size: 65px;
+  line-height: 1;
+  margin-bottom: 5px;
+}
+
+/* Main heading */
+.hero-center h1 {
+  font-size: 60px;
+  line-height: 1.05;
+  margin: 0;
+}
+
+/* Academy subtitle */
+.hero-center h1 span {
+  display: block;
+  font-size: 42px;
+  margin-top: 5px;
+}
+
+/* Points */
+.hero-points {
+  font-size: 19px;
+  margin-top: 14px;
+}
+
+/* Hero search */
+.hero-search {
+  width: min(700px, 60vw);
+  height: 64px;
+  margin: 24px auto 0;
+  border-radius: 35px;
+  display: flex;
+  align-items: center;
+  padding: 0 8px 0 22px;
+}
+
+/* Search input */
+.hero-search input {
+  flex: 1;
+  height: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 17px;
+}
+
+/* Search button */
+.hero-search button {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  font-size: 26px;
+  cursor: pointer;
+}
+
+/* Right mathematical artwork */
+.math-art {
+  position: absolute;
+  right: 4%;
+  bottom: 35px;
+  transform: scale(0.85);
+  transform-origin: bottom right;
+}
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 900px) {
+
+  .home-hero {
+    height: auto;
+    min-height: 480px;
+    padding: 50px 25px;
+  }
+
+  .hero-side-text {
+    display: none;
+  }
+
+  .hero-center h1 {
+    font-size: 46px;
+  }
+
+  .hero-center h1 span {
+    font-size: 32px;
+  }
+
+  .hero-symbol {
+    font-size: 55px;
+  }
+
+  .hero-points {
+    font-size: 16px;
+  }
+
+  .hero-search {
+    width: 90vw;
+    max-width: 600px;
+  }
+
+  .math-art {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+
+  .home-hero {
+    min-height: 430px;
+    padding: 35px 18px;
+  }
+
+  .hero-center h1 {
+    font-size: 38px;
+  }
+
+  .hero-center h1 span {
+    font-size: 27px;
+  }
+
+  .hero-symbol {
+    font-size: 48px;
+  }
+
+  .hero-points {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .hero-search {
+    height: 56px;
+    margin-top: 20px;
+  }
+
+  .hero-search button {
+    width: 44px;
+    height: 44px;
+  }
+}
