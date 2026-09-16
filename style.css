@@ -1303,11 +1303,47 @@ footer p {
 
   /* ---------- HERO ---------- */
 
-  .home-hero {
-    height: 360px;
-    min-height: 360px;
-    padding: 25px 15px;
-  }
+.home-hero {
+    height: 245px;
+    min-height: 245px;
+    padding: 18px 12px;
+}
+
+.hero-symbol {
+    font-size: 30px;
+    margin-bottom: 2px;
+}
+
+.hero-center h1 {
+    font-size: 25px;
+    line-height: 1.05;
+    letter-spacing: -0.3px;
+}
+
+.hero-center h1 span {
+    font-size: 19px;
+    margin-top: 3px;
+}
+
+.hero-points {
+    font-size: 10px;
+    margin: 9px 0 12px;
+}
+
+.hero-search {
+    width: 92%;
+    height: 42px;
+}
+
+.hero-search input {
+    font-size: 12px;
+}
+
+.hero-search button {
+    width: 34px;
+    height: 34px;
+    font-size: 16px;
+}
 
   /* Hide side quote on phone */
   .hero-side-text {
