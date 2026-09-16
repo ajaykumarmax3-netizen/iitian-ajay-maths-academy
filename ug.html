@@ -1,4 +1,328 @@
-<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Undergraduate Mathematics | IITian Ajay Maths Academy</title><link rel="stylesheet" href="assets/style.css"></head><body><nav><div class="logo">IITian <b>Ajay</b> Maths Academy</div><div>
-<a href="index.html">Home</a><a href="jee.html">JEE</a><a href="class11.html">Class 11</a><a href="class12.html">Class 12</a><a href="ug.html">UG</a><a href="pg.html">PG</a></div></nav>
-<header class="hero"><h1>Undergraduate Mathematics</h1><p>Choose a topic to explore notes, formulas, proofs, questions and solutions.</p></header>
-<section><div class="notice">🚧 This is the initial website structure. You can gradually add your own original content to every topic.</div><div class="subject-list"><a class="subject" id="linear-algebra" href="article.html?topic=Linear%20Algebra">Linear Algebra<br><small>Notes • Proofs • Questions →</small></a><a class="subject" id="real-analysis" href="article.html?topic=Real%20Analysis">Real Analysis<br><small>Notes • Proofs • Questions →</small></a><a class="subject" id="abstract-algebra" href="article.html?topic=Abstract%20Algebra">Abstract Algebra<br><small>Notes • Proofs • Questions →</small></a><a class="subject" id="multivariable-calculus" href="article.html?topic=Multivariable%20Calculus">Multivariable Calculus<br><small>Notes • Proofs • Questions →</small></a><a class="subject" id="ordinary-differential-equations" href="article.html?topic=Ordinary%20Differential%20Equations">Ordinary Differential Equations<br><small>Notes • Proofs • Questions →</small></a><a class="subject" id="topology" href="article.html?topic=Topology">Topology<br><small>Notes • Proofs • Questions →</small></a></div></section><footer><b>IITian Ajay Maths Academy</b><br>Learn • Understand • Solve • Prove<br>© 2026</footer></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Undergraduate Mathematics | IITian Ajay Maths Academy</title>
+
+<style>
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:Arial,Helvetica,sans-serif;
+  background:#f5f8fc;
+  color:#172033;
+}
+
+nav{
+  background:#061a36;
+  padding:18px 7%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+  position:sticky;
+  top:0;
+  z-index:100;
+  box-shadow:0 4px 18px rgba(0,0,0,.18);
+}
+
+.logo{
+  color:#fff;
+  font-size:21px;
+  font-weight:700;
+  white-space:nowrap;
+}
+
+.logo b{
+  color:#16a9e8;
+}
+
+nav div:last-child{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:8px;
+}
+
+nav a{
+  color:#dce8f5;
+  text-decoration:none;
+  padding:9px 12px;
+  border-radius:7px;
+  font-size:14px;
+  transition:.2s;
+}
+
+nav a:hover,
+nav a[href="ug.html"]{
+  background:#123a68;
+  color:#fff;
+}
+
+.hero{
+  background:
+    radial-gradient(circle at 15% 20%,rgba(22,169,232,.18),transparent 28%),
+    radial-gradient(circle at 85% 80%,rgba(66,133,244,.15),transparent 30%),
+    linear-gradient(135deg,#061a36,#0b2d55);
+  color:white;
+  padding:85px 20px 75px;
+  text-align:center;
+}
+
+.hero h1{
+  margin:0 0 15px;
+  font-size:46px;
+  letter-spacing:-1px;
+}
+
+.hero h1 span{
+  color:#16a9e8;
+}
+
+.hero p{
+  margin:0 auto;
+  max-width:700px;
+  color:#c9d9ea;
+  font-size:17px;
+  line-height:1.7;
+}
+
+.hero-symbols{
+  margin-top:28px;
+  font-size:25px;
+  letter-spacing:18px;
+  color:#7ed8ff;
+}
+
+section{
+  max-width:1150px;
+  margin:auto;
+  padding:55px 22px 70px;
+}
+
+.breadcrumb{
+  color:#64748b;
+  font-size:14px;
+  margin-bottom:18px;
+}
+
+.notice{
+  background:#eaf6ff;
+  border-left:4px solid #16a9e8;
+  padding:17px 20px;
+  border-radius:8px;
+  color:#31506d;
+  margin-bottom:35px;
+}
+
+.section-title{
+  text-align:center;
+  margin-bottom:38px;
+}
+
+.section-title h2{
+  margin:0 0 10px;
+  font-size:30px;
+  color:#061a36;
+}
+
+.section-title p{
+  margin:0;
+  color:#64748b;
+}
+
+.subject-list{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:22px;
+}
+
+.subject{
+  display:block;
+  background:white;
+  border:1px solid #dbe5ef;
+  border-radius:14px;
+  padding:27px 24px;
+  text-decoration:none;
+  color:#10233f;
+  font-size:19px;
+  font-weight:700;
+  box-shadow:0 7px 22px rgba(20,50,80,.07);
+  transition:.25s;
+  position:relative;
+  overflow:hidden;
+}
+
+.subject:before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:0;
+  width:5px;
+  height:100%;
+  background:#16a9e8;
+}
+
+.subject:hover{
+  transform:translateY(-5px);
+  border-color:#16a9e8;
+  box-shadow:0 12px 30px rgba(20,70,110,.14);
+}
+
+.subject small{
+  display:block;
+  margin-top:12px;
+  color:#64748b;
+  font-size:13px;
+  font-weight:500;
+}
+
+footer{
+  background:#061a36;
+  color:#b8c9dc;
+  text-align:center;
+  padding:35px 20px;
+  line-height:1.8;
+}
+
+footer b{
+  color:white;
+  font-size:18px;
+}
+
+@media(max-width:850px){
+  nav{
+    flex-direction:column;
+    padding:16px 4%;
+  }
+
+  .subject-list{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .hero h1{
+    font-size:38px;
+  }
+}
+
+@media(max-width:560px){
+  .subject-list{
+    grid-template-columns:1fr;
+  }
+
+  .hero{
+    padding:65px 18px;
+  }
+
+  .hero h1{
+    font-size:32px;
+  }
+
+  .hero-symbols{
+    font-size:20px;
+    letter-spacing:8px;
+  }
+
+  nav a{
+    font-size:13px;
+    padding:7px 8px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <div class="logo">IITian <b>Ajay</b> Maths Academy</div>
+
+  <div>
+    <a href="index.html">Home</a>
+    <a href="jee.html">JEE</a>
+    <a href="class11.html">Class 11</a>
+    <a href="class12.html">Class 12</a>
+    <a href="ug.html">UG</a>
+    <a href="pg.html">PG</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <h1>Undergraduate <span>Mathematics</span></h1>
+
+  <p>
+    Build a strong mathematical foundation through concepts,
+    definitions, theorems, proofs, examples, problems and applications.
+  </p>
+
+  <div class="hero-symbols">
+    ∑ ∫ ∂ ∞ √ λ ℝ
+  </div>
+</header>
+
+<section>
+
+  <div class="breadcrumb">
+    Home &nbsp;›&nbsp; Undergraduate Mathematics
+  </div>
+
+  <div class="notice">
+    🎓 Undergraduate Mathematics — rigorous concepts, definitions,
+    theorems, proofs, examples, problems and applications.
+  </div>
+
+  <div class="section-title">
+    <h2>Undergraduate Mathematics</h2>
+    <p>Choose a topic to begin learning.</p>
+  </div>
+
+  <div class="subject-list">
+
+    <a class="subject"
+       href="article.html?topic=Linear%20Algebra">
+      Linear Algebra
+      <small>Notes • Proofs • Questions →</small>
+    </a>
+
+    <a class="subject"
+       href="article.html?topic=Real%20Analysis">
+      Real Analysis
+      <small>Notes • Proofs • Questions →</small>
+    </a>
+
+    <a class="subject"
+       href="article.html?topic=Abstract%20Algebra">
+      Abstract Algebra
+      <small>Notes • Proofs • Questions →</small>
+    </a>
+
+    <a class="subject"
+       href="article.html?topic=Multivariable%20Calculus">
+      Multivariable Calculus
+      <small>Notes • Proofs • Questions →</small>
+    </a>
+
+    <a class="subject"
+       href="article.html?topic=Ordinary%20Differential%20Equations">
+      Ordinary Differential Equations
+      <small>Notes • Proofs • Questions →</small>
+    </a>
+
+    <a class="subject"
+       href="article.html?topic=Topology">
+      Topology
+      <small>Notes • Proofs • Questions →</small>
+    </a>
+
+  </div>
+
+</section>
+
+<footer>
+  <b>IITian Ajay Maths Academy</b><br>
+  Learn • Understand • Solve • Prove<br>
+  © 2026
+</footer>
+
+</body>
+</html>
