@@ -597,472 +597,766 @@ body > footer b{
 
 
   <!-- TOPIC SCRIPT -->
-  <script>
+ <script>
 
-/* =========================================
+/* =========================================================
+   IITIAN AJAY MATHS ACADEMY
+   LEVEL + SUBJECT + CHAPTER SYSTEM
+   ========================================================= */
+
+
+/* =========================
    READ URL
-   ========================================= */
+   ========================= */
 
-const params = new URLSearchParams(location.search);
+const params = new URLSearchParams(window.location.search);
 
-const topic = params.get("topic") || "Mathematics";
-const level = params.get("level") || "";
+let topic = params.get("topic") || "";
+let level = params.get("level") || "";
+let subject = params.get("subject") || "";
 
 
-/* =========================================
-   LEVEL-WISE TOPIC DATABASE
-   ========================================= */
+/* =========================================================
+   LEVEL NORMALIZATION
+   ========================================================= */
 
-const siteData = {
+function normalizeLevel(value) {
+
+  if (value === "JEE Mathematics") return "JEE";
+
+  if (value === "Class 11 Mathematics") return "Class 11";
+
+  if (value === "Class 12 Mathematics") return "Class 12";
+
+  if (value === "Undergraduate Mathematics") return "UG";
+
+  if (value === "Postgraduate Mathematics") return "PG";
+
+  return value;
+}
+
+level = normalizeLevel(level);
+
+
+/* =========================================================
+   SUBJECT DATABASE
+   ========================================================= */
+
+const subjects = {
 
   "JEE": {
 
-    "Algebra": {
-      description: "Complete JEE Algebra preparation with concepts, formulas, theorems, proofs, examples and problems."
-    },
+    "Algebra": [
+      "Sets and Functions",
+      "Relations and Functions",
+      "Quadratic Equations",
+      "Complex Numbers",
+      "Matrices and Determinants",
+      "Permutations and Combinations",
+      "Binomial Theorem",
+      "Sequences and Series",
+      "Mathematical Induction"
+    ],
 
-    "Calculus": {
-      description: "Complete JEE Calculus preparation with concepts, formulas, methods, examples and problems."
-    },
+    "Calculus": [
+      "Limits",
+      "Continuity",
+      "Differentiability",
+      "Methods of Differentiation",
+      "Application of Derivatives",
+      "Indefinite Integrals",
+      "Definite Integrals",
+      "Area Under Curves",
+      "Differential Equations"
+    ],
 
-    "Coordinate Geometry": {
-      description: "Complete JEE Coordinate Geometry preparation with concepts, formulas, results and problems."
-    },
+    "Coordinate Geometry": [
+      "Straight Lines",
+      "Circles",
+      "Parabola",
+      "Ellipse",
+      "Hyperbola",
+      "Pair of Straight Lines"
+    ],
 
-    "Trigonometry": {
-      description: "Complete JEE Trigonometry preparation with identities, formulas, equations and problems."
-    },
+    "Trigonometry": [
+      "Trigonometric Ratios",
+      "Trigonometric Identities",
+      "Trigonometric Equations",
+      "Inverse Trigonometric Functions",
+      "Properties of Triangles",
+      "Heights and Distances"
+    ],
 
-    "Vector & 3D Geometry": {
-      description: "Complete JEE Vector and 3D Geometry preparation with concepts, formulas, methods and problems."
-    },
+    "Vector & 3D Geometry": [
+      "Vectors",
+      "Vector Algebra",
+      "Three Dimensional Geometry",
+      "Direction Cosines",
+      "Lines in 3D",
+      "Planes"
+    ],
 
-    "JEE Main Questions": {
-      description: "JEE Main Mathematics questions arranged topic-wise with step-by-step solutions."
-    },
+    "JEE Main Questions": [
+      "Chapter-wise Questions",
+      "Previous Year Questions",
+      "Mixed Practice Questions",
+      "Mock Tests"
+    ],
 
-    "JEE Advanced Problems": {
-      description: "JEE Advanced Mathematics problems with detailed concepts and step-by-step solutions."
-    }
+    "JEE Advanced Problems": [
+      "Advanced Algebra Problems",
+      "Advanced Calculus Problems",
+      "Advanced Coordinate Geometry",
+      "Advanced Trigonometry",
+      "Advanced Vector & 3D",
+      "Mixed Advanced Problems"
+    ]
 
   },
 
+
+  /* =====================================================
+     CLASS 11
+     ===================================================== */
 
   "Class 11": {
 
-    "Sets": {
-      description: "Complete Class 11 study material for Sets including definitions, operations, properties, examples and questions."
-    },
+    "Sets": [
+      "Introduction to Sets",
+      "Types of Sets",
+      "Subsets",
+      "Power Set",
+      "Operations on Sets",
+      "Venn Diagrams"
+    ],
 
-    "Relations & Functions": {
-      description: "Complete Class 11 study material for Relations and Functions including definitions, types, properties, examples and questions."
-    },
+    "Relations & Functions": [
+      "Ordered Pairs",
+      "Cartesian Product",
+      "Relations",
+      "Functions",
+      "Types of Functions",
+      "Composition of Functions"
+    ],
 
-    "Trigonometry": {
-      description: "Complete Class 11 study material for Trigonometry including ratios, identities, equations, graphs and applications."
-    },
+    "Trigonometry": [
+      "Angles",
+      "Trigonometric Ratios",
+      "Trigonometric Functions",
+      "Trigonometric Identities",
+      "Trigonometric Equations"
+    ],
 
-    "Complex Numbers": {
-      description: "Complete Class 11 study material for Complex Numbers including representation, algebra, properties and examples."
-    },
+    "Complex Numbers": [
+      "Introduction to Complex Numbers",
+      "Algebra of Complex Numbers",
+      "Argand Plane",
+      "Modulus and Argument",
+      "Polar Form"
+    ],
 
-    "Sequences & Series": {
-      description: "Complete Class 11 study material for Sequences and Series including AP, GP and important results."
-    },
+    "Sequences & Series": [
+      "Sequences",
+      "Arithmetic Progression",
+      "Geometric Progression",
+      "Special Series",
+      "Sum of Series"
+    ],
 
-    "Straight Lines": {
-      description: "Complete Class 11 study material for Straight Lines including equations, slopes, distances and important results."
-    },
+    "Straight Lines": [
+      "Coordinate Geometry",
+      "Slope of a Line",
+      "Equation of a Line",
+      "Distance Formula",
+      "Angle Between Lines"
+    ],
 
-    "Conic Sections": {
-      description: "Complete Class 11 study material for Conic Sections including circle, parabola, ellipse and hyperbola."
-    },
+    "Conic Sections": [
+      "Circle",
+      "Parabola",
+      "Ellipse",
+      "Hyperbola"
+    ],
 
-    "Limits & Derivatives": {
-      description: "Complete Class 11 study material for Limits and Derivatives including concepts, standard limits and basic derivatives."
-    }
+    "Limits & Derivatives": [
+      "Introduction to Limits",
+      "Standard Limits",
+      "Continuity",
+      "Introduction to Derivatives",
+      "Basic Derivatives"
+    ]
 
   },
 
+
+  /* =====================================================
+     CLASS 12
+     ===================================================== */
 
   "Class 12": {
 
-    "Relations & Functions": {
-      description: "Complete Class 12 study material for Relations and Functions including types of functions, composition, inverse functions and examples."
-    },
+    "Relations & Functions": [
+      "Relations",
+      "Functions",
+      "Types of Functions",
+      "Composition of Functions",
+      "Inverse Functions"
+    ],
 
-    "Inverse Trigonometric Functions": {
-      description: "Complete Class 12 study material for Inverse Trigonometric Functions including definitions, properties, identities and examples."
-    },
+    "Inverse Trigonometric Functions": [
+      "Introduction",
+      "Principal Values",
+      "Properties",
+      "Graphs",
+      "Trigonometric Identities"
+    ],
 
-    "Matrices": {
-      description: "Complete Class 12 study material for Matrices including types, operations, properties, inverse and applications."
-    },
+    "Matrices": [
+      "Introduction to Matrices",
+      "Types of Matrices",
+      "Matrix Operations",
+      "Transpose",
+      "Symmetric Matrices",
+      "Inverse of a Matrix"
+    ],
 
-    "Determinants": {
-      description: "Complete Class 12 study material for Determinants including properties, evaluation, applications and problems."
-    },
+    "Determinants": [
+      "Introduction to Determinants",
+      "Properties of Determinants",
+      "Evaluation of Determinants",
+      "Area of Triangle",
+      "Adjoint and Inverse"
+    ],
 
-    "Continuity & Differentiability": {
-      description: "Complete Class 12 study material for Continuity and Differentiability including definitions, theorems, derivatives and examples."
-    },
+    "Continuity & Differentiability": [
+      "Continuity",
+      "Differentiability",
+      "Derivative of Composite Functions",
+      "Implicit Differentiation",
+      "Logarithmic Differentiation"
+    ],
 
-    "Applications of Derivatives": {
-      description: "Complete Class 12 study material for Applications of Derivatives including monotonicity, maxima, minima and related problems."
-    },
+    "Applications of Derivatives": [
+      "Increasing and Decreasing Functions",
+      "Maxima and Minima",
+      "Tangent and Normal",
+      "Rate of Change"
+    ],
 
-    "Integrals": {
-      description: "Complete Class 12 study material for Integrals including indefinite integrals, definite integrals, properties and applications."
-    },
+    "Integrals": [
+      "Indefinite Integrals",
+      "Methods of Integration",
+      "Definite Integrals",
+      "Properties of Definite Integrals",
+      "Area Under Curves"
+    ],
 
-    "Differential Equations": {
-      description: "Complete Class 12 study material for Differential Equations including formation, order, degree and methods of solution."
-    },
+    "Differential Equations": [
+      "Basic Concepts",
+      "Order and Degree",
+      "Formation of Differential Equations",
+      "Variable Separable Method",
+      "Linear Differential Equations"
+    ],
 
-    "Vectors & 3D Geometry": {
-      description: "Complete Class 12 study material for Vectors and 3D Geometry including vector algebra, lines, planes and applications."
-    },
+    "Vectors & 3D Geometry": [
+      "Introduction to Vectors",
+      "Vector Operations",
+      "Dot Product",
+      "Cross Product",
+      "Lines in 3D",
+      "Planes"
+    ],
 
-    "Probability": {
-      description: "Complete Class 12 study material for Probability including conditional probability, Bayes theorem and random variables."
-    }
+    "Probability": [
+      "Conditional Probability",
+      "Independent Events",
+      "Bayes Theorem",
+      "Random Variables",
+      "Probability Distributions"
+    ]
 
   },
 
+
+  /* =====================================================
+     UG
+     ===================================================== */
 
   "UG": {
 
-    "Linear Algebra": {
-      description: "Rigorous undergraduate study of vector spaces, linear transformations, matrices, eigenvalues and related theory."
-    },
+    "Linear Algebra": [
+      "Systems of Linear Equations",
+      "Matrices",
+      "Vector Spaces",
+      "Subspaces",
+      "Linear Transformations",
+      "Eigenvalues and Eigenvectors"
+    ],
 
-    "Real Analysis": {
-      description: "Rigorous undergraduate study of sequences, limits, continuity, differentiation, integration and convergence."
-    },
+    "Real Analysis": [
+      "Real Number System",
+      "Sequences",
+      "Limits",
+      "Continuity",
+      "Differentiability",
+      "Riemann Integration",
+      "Infinite Series"
+    ],
 
-    "Abstract Algebra": {
-      description: "Undergraduate study of groups, rings, fields, homomorphisms and fundamental algebraic structures."
-    },
+    "Abstract Algebra": [
+      "Groups",
+      "Subgroups",
+      "Cyclic Groups",
+      "Homomorphisms",
+      "Rings",
+      "Ideals",
+      "Fields"
+    ],
 
-    "Multivariable Calculus": {
-      description: "Undergraduate study of functions of several variables, partial derivatives, multiple integrals and applications."
-    },
+    "Multivariable Calculus": [
+      "Functions of Several Variables",
+      "Partial Derivatives",
+      "Total Derivatives",
+      "Multiple Integrals",
+      "Vector Calculus"
+    ],
 
-    "Ordinary Differential Equations": {
-      description: "Undergraduate study of ordinary differential equations, methods of solution, existence ideas and applications."
-    },
+    "Ordinary Differential Equations": [
+      "First Order ODE",
+      "Linear Differential Equations",
+      "Higher Order ODE",
+      "Systems of ODE",
+      "Existence and Uniqueness"
+    ],
 
-    "Topology": {
-      description: "Undergraduate study of topological spaces, open and closed sets, continuity, compactness and connectedness."
-    }
+    "Topology": [
+      "Metric Spaces",
+      "Open and Closed Sets",
+      "Topological Spaces",
+      "Continuity",
+      "Compactness",
+      "Connectedness"
+    ]
 
   },
 
 
+  /* =====================================================
+     PG
+     ===================================================== */
+
   "PG": {
 
-    "Functional Analysis": {
-      description: "Advanced study of normed spaces, Banach spaces, Hilbert spaces, operators and functional-analytic methods."
-    },
+    "Functional Analysis": [
+      "Metric and Normed Spaces",
+      "Banach Spaces",
+      "Hilbert Spaces",
+      "Linear Operators",
+      "Bounded Operators",
+      "Continuous Linear Functionals"
+    ],
 
-    "Complex Analysis": {
-      description: "Advanced study of complex functions, analyticity, contour integration, Cauchy's theorem, residues and related topics."
-    },
+    "Complex Analysis": [
+      "Complex Functions",
+      "Analytic Functions",
+      "Complex Integration",
+      "Cauchy's Theorem",
+      "Taylor and Laurent Series",
+      "Residue Theory"
+    ],
 
-    "Partial Differential Equations": {
-      description: "Advanced study of partial differential equations, methods of solution and important mathematical models."
-    },
+    "Partial Differential Equations": [
+      "First Order PDE",
+      "Second Order PDE",
+      "Classification of PDE",
+      "Method of Characteristics",
+      "Heat Equation",
+      "Wave Equation",
+      "Laplace Equation"
+    ],
 
-    "Numerical Analysis": {
-      description: "Advanced study of numerical methods, approximation, error analysis and computational techniques."
-    },
+    "Numerical Analysis": [
+      "Errors and Approximations",
+      "Interpolation",
+      "Numerical Differentiation",
+      "Numerical Integration",
+      "Numerical Solution of Equations",
+      "Numerical ODE"
+    ],
 
-    "Commutative Algebra": {
-      description: "Advanced study of rings, ideals, modules, localization, prime ideals and algebraic structures."
+    "Commutative Algebra": [
+      "Rings and Ideals",
+      "Modules",
+      "Prime Ideals",
+      "Maximal Ideals",
+      "Localization",
+      "Noetherian Rings"
+    ]
+
+  }
+
+};
+
+
+/* =========================================================
+   FIND SUBJECT FROM CHAPTER
+   ========================================================= */
+
+function findSubject(levelName, chapterName) {
+
+  if (!subjects[levelName]) {
+    return "";
+  }
+
+  for (const subjectName in subjects[levelName]) {
+
+    if (
+      subjects[levelName][subjectName]
+        .includes(chapterName)
+    ) {
+      return subjectName;
     }
 
   }
 
-};
-
-
-/* =========================================
-   TOPIC LISTS FOR SIDEBAR
-   ========================================= */
-
-const topicLists = {
-
-  "JEE": [
-    "Algebra",
-    "Calculus",
-    "Coordinate Geometry",
-    "Trigonometry",
-    "Vector & 3D Geometry",
-    "JEE Main Questions",
-    "JEE Advanced Problems"
-  ],
-
-  "Class 11": [
-    "Sets",
-    "Relations & Functions",
-    "Trigonometry",
-    "Complex Numbers",
-    "Sequences & Series",
-    "Straight Lines",
-    "Conic Sections",
-    "Limits & Derivatives"
-  ],
-
-  "Class 12": [
-    "Relations & Functions",
-    "Inverse Trigonometric Functions",
-    "Matrices",
-    "Determinants",
-    "Continuity & Differentiability",
-    "Applications of Derivatives",
-    "Integrals",
-    "Differential Equations",
-    "Vectors & 3D Geometry",
-    "Probability"
-  ],
-
-  "UG": [
-    "Linear Algebra",
-    "Real Analysis",
-    "Abstract Algebra",
-    "Multivariable Calculus",
-    "Ordinary Differential Equations",
-    "Topology"
-  ],
-
-  "PG": [
-    "Functional Analysis",
-    "Complex Analysis",
-    "Partial Differential Equations",
-    "Numerical Analysis",
-    "Commutative Algebra"
-  ]
-
-};
-
-
-/* =========================================
-   NORMALIZE LEVEL
-   ========================================= */
-
-let selectedLevel = level;
-
-if (selectedLevel === "JEE Mathematics") {
-  selectedLevel = "JEE";
-}
-
-if (selectedLevel === "Class 11 Mathematics") {
-  selectedLevel = "Class 11";
-}
-
-if (selectedLevel === "Class 12 Mathematics") {
-  selectedLevel = "Class 12";
-}
-
-if (selectedLevel === "Undergraduate Mathematics") {
-  selectedLevel = "UG";
-}
-
-if (selectedLevel === "Postgraduate Mathematics") {
-  selectedLevel = "PG";
+  return "";
 }
 
 
-/* =========================================
-   GET CURRENT TOPIC DATA
-   ========================================= */
+/* =========================================================
+   IF CURRENT PAGE IS A CHAPTER
+   ========================================================= */
 
-let currentData = null;
+if (!subject && level) {
+
+  const foundSubject =
+    findSubject(level, topic);
+
+  if (foundSubject) {
+    subject = foundSubject;
+  }
+
+}
+
+
+/* =========================================================
+   IF CURRENT PAGE IS A SUBJECT
+   ========================================================= */
 
 if (
-  siteData[selectedLevel] &&
-  siteData[selectedLevel][topic]
+  level &&
+  subjects[level] &&
+  subjects[level][topic]
 ) {
-  currentData = siteData[selectedLevel][topic];
-}
 
-
-/* =========================================
-   FALLBACK
-   ========================================= */
-
-if (!currentData) {
-
-  currentData = {
-    description:
-      "Complete study material with concepts, definitions, formulas, theorems, proofs, examples, questions and step-by-step solutions."
-  };
+  subject = topic;
 
 }
 
 
-/* =========================================
-   LEVEL NAME FOR DISPLAY
-   ========================================= */
+/* =========================================================
+   DEFAULT LEVEL
+   ========================================================= */
 
-let displayLevel = "Mathematics";
+if (!level) {
 
-if (selectedLevel === "JEE") {
-  displayLevel = "JEE Mathematics";
-}
+  if (subjects["JEE"][topic]) {
+    level = "JEE";
+  }
 
-if (selectedLevel === "Class 11") {
-  displayLevel = "Class 11 Mathematics";
-}
-
-if (selectedLevel === "Class 12") {
-  displayLevel = "Class 12 Mathematics";
-}
-
-if (selectedLevel === "UG") {
-  displayLevel = "Undergraduate Mathematics";
-}
-
-if (selectedLevel === "PG") {
-  displayLevel = "Postgraduate Mathematics";
 }
 
 
-/* =========================================
-   PAGE TEXT
-   ========================================= */
+/* =========================================================
+   GET CHAPTER LIST
+   ========================================================= */
 
-document.getElementById("topic").textContent =
-  topic;
-
-document.getElementById("breadcrumb-topic").textContent =
-  topic;
-
-document.getElementById("level").textContent =
-  displayLevel;
-
-document.getElementById("description").textContent =
-  currentData.description;
-
-document.getElementById("chapter-title").textContent =
-  topic;
-
-document.getElementById("chapter-description").textContent =
-  currentData.description;
-
-document.title =
-  topic + " | IITian Ajay Maths Academy";
+let chapterList = [];
 
 
-/* =========================================
+if (
+  level &&
+  subject &&
+  subjects[level] &&
+  subjects[level][subject]
+) {
+
+  chapterList =
+    subjects[level][subject];
+
+}
+
+
+/* =========================================================
+   PAGE HEADING
+   ========================================================= */
+
+const topicHeading =
+  document.getElementById("topic");
+
+if (topicHeading) {
+  topicHeading.textContent =
+    topic || subject || "Mathematics";
+}
+
+
+/* =========================================================
+   BREADCRUMB
+   ========================================================= */
+
+const breadcrumb =
+  document.getElementById("breadcrumb-topic");
+
+if (breadcrumb) {
+  breadcrumb.textContent =
+    topic || subject || "Mathematics";
+}
+
+
+/* =========================================================
+   HERO TAG
+   ========================================================= */
+
+const heroTag =
+  document.querySelector(".topic-tag");
+
+if (heroTag) {
+
+  if (level === "JEE") {
+    heroTag.textContent =
+      "JEE Mathematics";
+  }
+
+  else if (level === "Class 11") {
+    heroTag.textContent =
+      "Class 11 Mathematics";
+  }
+
+  else if (level === "Class 12") {
+    heroTag.textContent =
+      "Class 12 Mathematics";
+  }
+
+  else if (level === "UG") {
+    heroTag.textContent =
+      "Undergraduate Mathematics";
+  }
+
+  else if (level === "PG") {
+    heroTag.textContent =
+      "Postgraduate Mathematics";
+  }
+
+}
+
+
+/* =========================================================
+   HERO DESCRIPTION
+   ========================================================= */
+
+const heroDescription =
+  document.querySelector(".hero-content p");
+
+if (heroDescription) {
+
+  if (subject) {
+
+    heroDescription.textContent =
+      "Learn " +
+      subject +
+      " through clear concepts, important formulas, theorems, examples, questions and step-by-step solutions.";
+
+  }
+
+}
+
+
+/* =========================================================
    SIDEBAR
-   ========================================= */
+   ========================================================= */
 
 const sidebar =
-  document.getElementById("sidebar-topics");
+  document.querySelector(".topics-sidebar");
 
-sidebar.innerHTML = "";
 
-const topics =
-  topicLists[selectedLevel] || [topic];
+if (sidebar) {
 
-topics.forEach((item, index) => {
+  /* CLEAR OLD ALGEBRA CONTENT */
 
-  const link =
-    document.createElement("a");
+  sidebar.innerHTML = "";
 
-  link.className =
-    "topic-link";
 
-  if (item === topic) {
-    link.classList.add("active");
+  /* ===============================
+     SIDEBAR TITLE
+     =============================== */
+
+  const heading =
+    document.createElement("h3");
+
+  heading.textContent =
+    "📚 " +
+    (subject || topic || "Mathematics") +
+    " Topics";
+
+  sidebar.appendChild(heading);
+
+
+  /* ===============================
+     CHAPTER LINKS
+     =============================== */
+
+  if (chapterList.length > 0) {
+
+    chapterList.forEach(
+      (chapter, index) => {
+
+        const link =
+          document.createElement("a");
+
+        link.className =
+          "topic-link";
+
+
+        /* ACTIVE CHAPTER */
+
+        if (chapter === topic) {
+          link.classList.add("active-topic");
+        }
+
+
+        /* CREATE URL */
+
+        let url =
+          "article.html?topic=" +
+          encodeURIComponent(chapter);
+
+
+        if (level) {
+
+          url +=
+            "&level=" +
+            encodeURIComponent(level);
+
+        }
+
+
+        if (subject) {
+
+          url +=
+            "&subject=" +
+            encodeURIComponent(subject);
+
+        }
+
+
+        link.href = url;
+
+
+        link.textContent =
+          (index + 1) +
+          ". " +
+          chapter;
+
+
+        sidebar.appendChild(link);
+
+      }
+    );
+
   }
 
-  let url =
-    "article.html?topic=" +
-    encodeURIComponent(item);
 
-  if (selectedLevel) {
-    url +=
-      "&level=" +
-      encodeURIComponent(selectedLevel);
+  /* =====================================================
+     IF NO CHAPTERS FOUND
+     ===================================================== */
+
+  else {
+
+    const message =
+      document.createElement("p");
+
+    message.textContent =
+      "Topics will be added soon.";
+
+    message.style.padding =
+      "15px";
+
+    message.style.color =
+      "#a9bfd5";
+
+    sidebar.appendChild(message);
+
   }
 
-  link.href = url;
-
-  link.textContent =
-    (index + 1) + ". " + item;
-
-  sidebar.appendChild(link);
-
-});
+}
 
 
-/* =========================================
-   LEVEL LINK
-   ========================================= */
+/* =========================================================
+   CHAPTER INTRODUCTION
+   ========================================================= */
 
-const levelLink =
-  document.getElementById("level-link");
+const chapterIntro =
+  document.querySelector(".chapter-intro h2");
 
-if (selectedLevel === "JEE") {
+if (chapterIntro) {
 
-  levelLink.href = "jee.html";
+  chapterIntro.textContent =
+    topic || subject || "Mathematics";
 
 }
 
-else if (selectedLevel === "Class 11") {
 
-  levelLink.href = "class11.html";
+const chapterIntroText =
+  document.querySelector(".chapter-intro p");
 
-}
+if (chapterIntroText) {
 
-else if (selectedLevel === "Class 12") {
+  if (subject) {
 
-  levelLink.href = "class12.html";
+    chapterIntroText.textContent =
+      "Study " +
+      subject +
+      " with clear concepts, definitions, formulas, theorems, examples, questions and step-by-step solutions.";
 
-}
-
-else if (selectedLevel === "UG") {
-
-  levelLink.href = "ug.html";
-
-}
-
-else if (selectedLevel === "PG") {
-
-  levelLink.href = "pg.html";
+  }
 
 }
 
-else {
 
-  levelLink.href = "index.html";
+/* =========================================================
+   LEVEL NAVIGATION
+   ========================================================= */
 
-}
+const levelLinks = {
 
-levelLink.textContent =
-  displayLevel;
+  "JEE": "jee.html",
+
+  "Class 11": "class11.html",
+
+  "Class 12": "class12.html",
+
+  "UG": "ug.html",
+
+  "PG": "pg.html"
+
+};
 
 
-/* =========================================
-   ACTIVE NAVBAR LINK
-   ========================================= */
-
-const navLinks =
+const navAnchors =
   document.querySelectorAll("nav a");
 
-navLinks.forEach(link => {
+
+navAnchors.forEach(link => {
 
   const href =
     link.getAttribute("href");
 
+
   if (
-    (selectedLevel === "JEE" && href === "jee.html") ||
-    (selectedLevel === "Class 11" && href === "class11.html") ||
-    (selectedLevel === "Class 12" && href === "class12.html") ||
-    (selectedLevel === "UG" && href === "ug.html") ||
-    (selectedLevel === "PG" && href === "pg.html")
+    level &&
+    levelLinks[level] === href
   ) {
 
     link.classList.add("active");
@@ -1071,7 +1365,17 @@ navLinks.forEach(link => {
 
 });
 
-</script>
+
+/* =========================================================
+   DOCUMENT TITLE
+   ========================================================= */
+
+document.title =
+  (topic || subject || "Mathematics") +
+  " | IITian Ajay Maths Academy";
+
+
+</script> 
 
 </body>
 
