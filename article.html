@@ -1369,13 +1369,14 @@ if (sidebar) {
 /* =========================================================
    16. MAIN CONTENT
    ========================================================= */
+/* =========================================================
+   16. MAIN CONTENT
+   ========================================================= */
 
 const studyContent =
   document.querySelector(".study-content");
 
-
 if (studyContent) {
-
 
   studyContent.innerHTML = `
 
@@ -1397,10 +1398,80 @@ if (studyContent) {
           Complete ${displayLevel} study material for
           <strong>${topic}</strong> under
           <strong>${subject}</strong>.
-          Learn concepts from basics to advanced level
-          with definitions, formulas, theorems, proofs,
-          examples, questions and solutions.
+          Study the topic step-by-step from basic concepts
+          to exam-level problems.
         </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- TOPIC ROADMAP -->
+
+    <section class="content-box">
+
+      <div class="section-heading">
+
+        <div>
+
+          <h2>🗺️ Topic Roadmap</h2>
+
+          <p>
+            Follow the topic in the recommended order.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="resource-list">
+
+        <div class="resource-item">
+          <span>01. Prerequisites</span>
+          <button>Start</button>
+        </div>
+
+        <div class="resource-item">
+          <span>02. Basic Concepts</span>
+          <button>Start</button>
+        </div>
+
+        <div class="resource-item">
+          <span>03. Definitions & Properties</span>
+          <button>Start</button>
+        </div>
+
+        <div class="resource-item">
+          <span>04. Important Formulas & Results</span>
+          <button>Start</button>
+        </div>
+
+        <div class="resource-item">
+          <span>05. Theorems & Proofs</span>
+          <button>Start</button>
+        </div>
+
+        <div class="resource-item">
+          <span>06. Solved Examples</span>
+          <button>Start</button>
+        </div>
+
+        <div class="resource-item">
+          <span>07. Practice Questions</span>
+          <button>Start</button>
+        </div>
+
+        <div class="resource-item">
+          <span>08. Step-by-Step Solutions</span>
+          <button>Start</button>
+        </div>
+
+        <div class="resource-item">
+          <span>09. Quick Revision</span>
+          <button>Start</button>
+        </div>
 
       </div>
 
@@ -1416,11 +1487,15 @@ if (studyContent) {
       </a>
 
       <a href="#formulas">
-        📌 Definitions & Formulas
+        📌 Formulas
       </a>
 
       <a href="#proofs">
-        ✍️ Theorems & Proofs
+        ✍️ Proofs
+      </a>
+
+      <a href="#examples">
+        🧮 Examples
       </a>
 
       <a href="#questions">
@@ -1428,7 +1503,7 @@ if (studyContent) {
       </a>
 
       <a href="#solutions">
-        🧮 Solutions
+        ✅ Solutions
       </a>
 
     </div>
@@ -1436,10 +1511,7 @@ if (studyContent) {
 
     <!-- NOTES -->
 
-    <section
-      class="content-box"
-      id="notes"
-    >
+    <section class="content-box" id="notes">
 
       <div class="section-heading">
 
@@ -1450,85 +1522,38 @@ if (studyContent) {
           </h2>
 
           <p>
-            Detailed notes covering the complete
-            ${displayLevel} syllabus for this topic.
+            Complete theory arranged in a
+            step-by-step learning sequence.
           </p>
 
         </div>
 
-        <button>
-          Download PDF
-        </button>
-
       </div>
 
 
-      <div class="resource-list">
+      <div class="accordion-item">
+        1. Prerequisites
+        <span>⌄</span>
+      </div>
 
-        <div class="resource-item">
+      <div class="accordion-item">
+        2. Introduction to ${topic}
+        <span>⌄</span>
+      </div>
 
-          <span>
-            📄 Introduction to ${topic}
-          </span>
+      <div class="accordion-item">
+        3. Basic Concepts
+        <span>⌄</span>
+      </div>
 
-          <button>
-            View
-          </button>
+      <div class="accordion-item">
+        4. Types and Important Cases
+        <span>⌄</span>
+      </div>
 
-        </div>
-
-
-        <div class="resource-item">
-
-          <span>
-            📄 Important Concepts
-          </span>
-
-          <button>
-            View
-          </button>
-
-        </div>
-
-
-        <div class="resource-item">
-
-          <span>
-            📄 Definitions and Properties
-          </span>
-
-          <button>
-            View
-          </button>
-
-        </div>
-
-
-        <div class="resource-item">
-
-          <span>
-            📄 Solved Examples
-          </span>
-
-          <button>
-            View
-          </button>
-
-        </div>
-
-
-        <div class="resource-item">
-
-          <span>
-            📄 Quick Revision Notes
-          </span>
-
-          <button>
-            View
-          </button>
-
-        </div>
-
+      <div class="accordion-item">
+        5. Properties
+        <span>⌄</span>
       </div>
 
     </section>
@@ -1536,22 +1561,19 @@ if (studyContent) {
 
     <!-- FORMULAS -->
 
-    <section
-      class="content-box"
-      id="formulas"
-    >
+    <section class="content-box" id="formulas">
 
       <div class="section-heading">
 
         <div>
 
           <h2>
-            📌 Definitions & Formulas
+            📌 Definitions, Formulas & Results
           </h2>
 
           <p>
-            Important definitions, formulas and results
-            for quick revision.
+            Important results collected in one place
+            for learning and revision.
           </p>
 
         </div>
@@ -1560,38 +1582,23 @@ if (studyContent) {
 
 
       <div class="accordion-item">
-
-        1. Basic Definitions
-
+        Important Definitions
         <span>⌄</span>
-
       </div>
 
-
       <div class="accordion-item">
-
-        2. Important Properties
-
+        Important Formulas
         <span>⌄</span>
-
       </div>
 
-
       <div class="accordion-item">
-
-        3. Important Formulas
-
+        Important Properties
         <span>⌄</span>
-
       </div>
 
-
       <div class="accordion-item">
-
-        4. Important Results
-
+        Important Results
         <span>⌄</span>
-
       </div>
 
     </section>
@@ -1599,10 +1606,7 @@ if (studyContent) {
 
     <!-- THEOREMS -->
 
-    <section
-      class="content-box"
-      id="proofs"
-    >
+    <section class="content-box" id="proofs">
 
       <div class="section-heading">
 
@@ -1613,8 +1617,8 @@ if (studyContent) {
           </h2>
 
           <p>
-            Important theorems and results with
-            step-by-step proofs.
+            Important theorem statements followed by
+            complete step-by-step proofs.
           </p>
 
         </div>
@@ -1623,52 +1627,37 @@ if (studyContent) {
 
 
       <div class="accordion-item">
-
-        1. Important Theorems
-
+        Important Theorem 1
         <span>⌄</span>
-
       </div>
 
-
       <div class="accordion-item">
-
-        2. Important Results
-
+        Important Theorem 2
         <span>⌄</span>
-
       </div>
 
-
       <div class="accordion-item">
-
-        3. Proof-Based Questions
-
+        Important Result & Proof
         <span>⌄</span>
-
       </div>
 
     </section>
 
 
-    <!-- QUESTIONS -->
+    <!-- SOLVED EXAMPLES -->
 
-    <section
-      class="content-box"
-      id="questions"
-    >
+    <section class="content-box" id="examples">
 
       <div class="section-heading">
 
         <div>
 
           <h2>
-            ❓ Important Questions
+            🧮 Solved Examples
           </h2>
 
           <p>
-            Questions arranged from basic concepts
-            to advanced problems.
+            Examples arranged from basic to advanced level.
           </p>
 
         </div>
@@ -1678,15 +1667,12 @@ if (studyContent) {
 
       <div class="question-levels">
 
-
         <div class="level-card">
 
-          <h3>
-            📊 Basic Level
-          </h3>
+          <h3>📊 Basic</h3>
 
           <p>
-            Fundamental concept questions
+            Fundamental examples to understand the concept.
           </p>
 
         </div>
@@ -1694,12 +1680,10 @@ if (studyContent) {
 
         <div class="level-card">
 
-          <h3>
-            📈 Moderate Level
-          </h3>
+          <h3>📈 Moderate</h3>
 
           <p>
-            Conceptual and application questions
+            Conceptual and application-based examples.
           </p>
 
         </div>
@@ -1707,12 +1691,10 @@ if (studyContent) {
 
         <div class="level-card">
 
-          <h3>
-            🔥 Advanced Level
-          </h3>
+          <h3>🔥 Advanced</h3>
 
           <p>
-            Challenging problems
+            Challenging examination-level examples.
           </p>
 
         </div>
@@ -1720,17 +1702,58 @@ if (studyContent) {
 
         <div class="level-card">
 
-          <h3>
-            📄 Previous Year
-          </h3>
+          <h3>🎯 Exam Level</h3>
 
           <p>
-            Relevant examination questions
+            Important questions with complete solutions.
           </p>
 
         </div>
 
+      </div>
 
+    </section>
+
+
+    <!-- QUESTIONS -->
+
+    <section class="content-box" id="questions">
+
+      <div class="section-heading">
+
+        <div>
+
+          <h2>
+            ❓ Practice Questions
+          </h2>
+
+          <p>
+            Questions arranged according to difficulty.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="accordion-item">
+        Basic Questions
+        <span>⌄</span>
+      </div>
+
+      <div class="accordion-item">
+        Moderate Questions
+        <span>⌄</span>
+      </div>
+
+      <div class="accordion-item">
+        Advanced Questions
+        <span>⌄</span>
+      </div>
+
+      <div class="accordion-item">
+        Previous Year Questions
+        <span>⌄</span>
       </div>
 
     </section>
@@ -1738,22 +1761,19 @@ if (studyContent) {
 
     <!-- SOLUTIONS -->
 
-    <section
-      class="content-box"
-      id="solutions"
-    >
+    <section class="content-box" id="solutions">
 
       <div class="section-heading">
 
         <div>
 
           <h2>
-            🧮 Step-by-Step Solutions
+            ✅ Step-by-Step Solutions
           </h2>
 
           <p>
-            Detailed solutions with explanations
-            for important problems.
+            Complete solutions with explanations
+            and required steps.
           </p>
 
         </div>
@@ -1762,37 +1782,71 @@ if (studyContent) {
 
 
       <div class="accordion-item">
-
-        Exercise 1 Solutions
-
+        Basic Question Solutions
         <span>⌄</span>
-
       </div>
 
-
       <div class="accordion-item">
-
-        Important Problem Solutions
-
+        Moderate Question Solutions
         <span>⌄</span>
-
       </div>
 
+      <div class="accordion-item">
+        Advanced Question Solutions
+        <span>⌄</span>
+      </div>
 
       <div class="accordion-item">
-
         Previous Year Solutions
-
         <span>⌄</span>
+      </div>
+
+    </section>
+
+
+    <!-- QUICK REVISION -->
+
+    <section class="content-box">
+
+      <div class="section-heading">
+
+        <div>
+
+          <h2>
+            ⚡ Quick Revision
+          </h2>
+
+          <p>
+            Last-minute revision of the most important
+            concepts, formulas and results.
+          </p>
+
+        </div>
 
       </div>
 
 
-      <div class="accordion-item">
+      <div class="resource-list">
 
-        Advanced Problem Solutions
+        <div class="resource-item">
+          <span>📌 Key Concepts</span>
+          <button>Review</button>
+        </div>
 
-        <span>⌄</span>
+        <div class="resource-item">
+          <span>📌 Important Formulas</span>
+          <button>Review</button>
+        </div>
+
+        <div class="resource-item">
+          <span>📌 Important Results</span>
+          <button>Review</button>
+        </div>
+
+        <div class="resource-item">
+          <span>📌 Common Mistakes</span>
+          <button>Review</button>
+        </div>
 
       </div>
 
@@ -1801,7 +1855,6 @@ if (studyContent) {
   `;
 
 }
-
 
 /* =========================================================
    17. MAKE SURE NAVBAR LEVEL IS ACTIVE
