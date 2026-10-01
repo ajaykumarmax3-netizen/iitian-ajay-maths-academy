@@ -1372,6 +1372,9 @@ if (sidebar) {
 /* =========================================================
    16. MAIN CONTENT
    ========================================================= */
+/* =========================================================
+   16. MAIN CONTENT
+   ========================================================= */
 
 const studyContent =
   document.querySelector(".study-content");
@@ -1384,15 +1387,11 @@ if (studyContent) {
 
     <section class="chapter-intro">
 
-      <div class="chapter-icon">
-        📖
-      </div>
+      <div class="chapter-icon">📖</div>
 
       <div>
 
-        <h2>
-          ${topic}
-        </h2>
+        <h2>${topic}</h2>
 
         <p>
           Complete ${displayLevel} study material for
@@ -1430,47 +1429,65 @@ if (studyContent) {
 
         <div class="resource-item">
           <span>01. Prerequisites</span>
-          <button>Start</button>
+          <button class="roadmap-btn" data-target="notes">
+            Start
+          </button>
         </div>
 
         <div class="resource-item">
           <span>02. Basic Concepts</span>
-          <button>Start</button>
+          <button class="roadmap-btn" data-target="notes">
+            Start
+          </button>
         </div>
 
         <div class="resource-item">
           <span>03. Definitions & Properties</span>
-          <button>Start</button>
+          <button class="roadmap-btn" data-target="formulas">
+            Start
+          </button>
         </div>
 
         <div class="resource-item">
           <span>04. Important Formulas & Results</span>
-          <button>Start</button>
+          <button class="roadmap-btn" data-target="formulas">
+            Start
+          </button>
         </div>
 
         <div class="resource-item">
           <span>05. Theorems & Proofs</span>
-          <button>Start</button>
+          <button class="roadmap-btn" data-target="proofs">
+            Start
+          </button>
         </div>
 
         <div class="resource-item">
           <span>06. Solved Examples</span>
-          <button>Start</button>
+          <button class="roadmap-btn" data-target="examples">
+            Start
+          </button>
         </div>
 
         <div class="resource-item">
           <span>07. Practice Questions</span>
-          <button>Start</button>
+          <button class="roadmap-btn" data-target="questions">
+            Start
+          </button>
         </div>
 
         <div class="resource-item">
           <span>08. Step-by-Step Solutions</span>
-          <button>Start</button>
+          <button class="roadmap-btn" data-target="solutions">
+            Start
+          </button>
         </div>
 
         <div class="resource-item">
           <span>09. Quick Revision</span>
-          <button>Start</button>
+          <button class="roadmap-btn" data-target="revision">
+            Start
+          </button>
         </div>
 
       </div>
@@ -1482,29 +1499,19 @@ if (studyContent) {
 
     <div class="resource-tabs">
 
-      <a href="#notes">
-        📚 Notes
-      </a>
+      <a href="#notes">📚 Notes</a>
 
-      <a href="#formulas">
-        📌 Formulas
-      </a>
+      <a href="#formulas">📌 Formulas</a>
 
-      <a href="#proofs">
-        ✍️ Proofs
-      </a>
+      <a href="#proofs">✍️ Proofs</a>
 
-      <a href="#examples">
-        🧮 Examples
-      </a>
+      <a href="#examples">🧮 Examples</a>
 
-      <a href="#questions">
-        ❓ Questions
-      </a>
+      <a href="#questions">❓ Questions</a>
 
-      <a href="#solutions">
-        ✅ Solutions
-      </a>
+      <a href="#solutions">✅ Solutions</a>
+
+      <a href="#revision">⚡ Revision</a>
 
     </div>
 
@@ -1517,9 +1524,7 @@ if (studyContent) {
 
         <div>
 
-          <h2>
-            📚 ${topic} Notes
-          </h2>
+          <h2>📚 ${topic} Notes</h2>
 
           <p>
             Complete theory arranged in a
@@ -1532,28 +1537,96 @@ if (studyContent) {
 
 
       <div class="accordion-item">
-        1. Prerequisites
-        <span>⌄</span>
+
+        <div class="accordion-title">
+          1. Prerequisites
+          <span>+</span>
+        </div>
+
+        <div class="accordion-content">
+
+          <p>
+            Concepts required before starting
+            <strong>${topic}</strong>.
+          </p>
+
+        </div>
+
       </div>
 
-      <div class="accordion-item">
-        2. Introduction to ${topic}
-        <span>⌄</span>
-      </div>
 
       <div class="accordion-item">
-        3. Basic Concepts
-        <span>⌄</span>
+
+        <div class="accordion-title">
+          2. Introduction to ${topic}
+          <span>+</span>
+        </div>
+
+        <div class="accordion-content">
+
+          <p>
+            Introduction and fundamental ideas of
+            <strong>${topic}</strong>.
+          </p>
+
+        </div>
+
       </div>
 
-      <div class="accordion-item">
-        4. Types and Important Cases
-        <span>⌄</span>
-      </div>
 
       <div class="accordion-item">
-        5. Properties
-        <span>⌄</span>
+
+        <div class="accordion-title">
+          3. Basic Concepts
+          <span>+</span>
+        </div>
+
+        <div class="accordion-content">
+
+          <p>
+            Important basic concepts will be explained
+            step-by-step with suitable examples.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="accordion-item">
+
+        <div class="accordion-title">
+          4. Types and Important Cases
+          <span>+</span>
+        </div>
+
+        <div class="accordion-content">
+
+          <p>
+            Different types, cases and important
+            observations related to the topic.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="accordion-item">
+
+        <div class="accordion-title">
+          5. Properties
+          <span>+</span>
+        </div>
+
+        <div class="accordion-content">
+
+          <p>
+            Important properties and their applications.
+          </p>
+
+        </div>
+
       </div>
 
     </section>
@@ -1567,9 +1640,7 @@ if (studyContent) {
 
         <div>
 
-          <h2>
-            📌 Definitions, Formulas & Results
-          </h2>
+          <h2>📌 Definitions, Formulas & Results</h2>
 
           <p>
             Important results collected in one place
@@ -1582,23 +1653,76 @@ if (studyContent) {
 
 
       <div class="accordion-item">
-        Important Definitions
-        <span>⌄</span>
+
+        <div class="accordion-title">
+          Important Definitions
+          <span>+</span>
+        </div>
+
+        <div class="accordion-content">
+
+          <p>
+            Important definitions related to
+            <strong>${topic}</strong>.
+          </p>
+
+        </div>
+
       </div>
 
-      <div class="accordion-item">
-        Important Formulas
-        <span>⌄</span>
-      </div>
 
       <div class="accordion-item">
-        Important Properties
-        <span>⌄</span>
+
+        <div class="accordion-title">
+          Important Formulas
+          <span>+</span>
+        </div>
+
+        <div class="accordion-content">
+
+          <p>
+            Important formulas and standard results.
+          </p>
+
+        </div>
+
       </div>
 
+
       <div class="accordion-item">
-        Important Results
-        <span>⌄</span>
+
+        <div class="accordion-title">
+          Important Properties
+          <span>+</span>
+        </div>
+
+        <div class="accordion-content">
+
+          <p>
+            Important properties required for solving
+            problems.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="accordion-item">
+
+        <div class="accordion-title">
+          Important Results
+          <span>+</span>
+        </div>
+
+        <div class="accordion-content">
+
+          <p>
+            Important results for examination and revision.
+          </p>
+
+        </div>
+
       </div>
 
     </section>
@@ -1612,9 +1736,7 @@ if (studyContent) {
 
         <div>
 
-          <h2>
-            ✍️ Theorems & Proofs
-          </h2>
+          <h2>✍️ Theorems & Proofs</h2>
 
           <p>
             Important theorem statements followed by
@@ -1627,18 +1749,59 @@ if (studyContent) {
 
 
       <div class="accordion-item">
-        Important Theorem 1
-        <span>⌄</span>
+
+        <div class="accordion-title">
+          Important Theorem 1
+          <span>+</span>
+        </div>
+
+        <div class="accordion-content">
+
+          <p>
+            The theorem statement and complete proof
+            will be added here.
+          </p>
+
+        </div>
+
       </div>
 
-      <div class="accordion-item">
-        Important Theorem 2
-        <span>⌄</span>
-      </div>
 
       <div class="accordion-item">
-        Important Result & Proof
-        <span>⌄</span>
+
+        <div class="accordion-title">
+          Important Theorem 2
+          <span>+</span>
+        </div>
+
+        <div class="accordion-content">
+
+          <p>
+            The theorem statement and complete proof
+            will be added here.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="accordion-item">
+
+        <div class="accordion-title">
+          Important Result & Proof
+          <span>+</span>
+        </div>
+
+        <div class="accordion-content">
+
+          <p>
+            Important result with detailed explanation
+            and proof.
+          </p>
+
+        </div>
+
       </div>
 
     </section>
@@ -1652,9 +1815,7 @@ if (studyContent) {
 
         <div>
 
-          <h2>
-            🧮 Solved Examples
-          </h2>
+          <h2>🧮 Solved Examples</h2>
 
           <p>
             Examples arranged from basic to advanced level.
@@ -1723,9 +1884,7 @@ if (studyContent) {
 
         <div>
 
-          <h2>
-            ❓ Practice Questions
-          </h2>
+          <h2>❓ Practice Questions</h2>
 
           <p>
             Questions arranged according to difficulty.
@@ -1737,23 +1896,74 @@ if (studyContent) {
 
 
       <div class="accordion-item">
-        Basic Questions
-        <span>⌄</span>
+
+        <div class="accordion-title">
+          Basic Questions
+          <span>+</span>
+        </div>
+
+        <div class="accordion-content">
+
+          <p>
+            Foundation-level practice questions.
+          </p>
+
+        </div>
+
       </div>
 
-      <div class="accordion-item">
-        Moderate Questions
-        <span>⌄</span>
-      </div>
 
       <div class="accordion-item">
-        Advanced Questions
-        <span>⌄</span>
+
+        <div class="accordion-title">
+          Moderate Questions
+          <span>+</span>
+        </div>
+
+        <div class="accordion-content">
+
+          <p>
+            Conceptual and application-based questions.
+          </p>
+
+        </div>
+
       </div>
 
+
       <div class="accordion-item">
-        Previous Year Questions
-        <span>⌄</span>
+
+        <div class="accordion-title">
+          Advanced Questions
+          <span>+</span>
+        </div>
+
+        <div class="accordion-content">
+
+          <p>
+            Challenging examination-level problems.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="accordion-item">
+
+        <div class="accordion-title">
+          Previous Year Questions
+          <span>+</span>
+        </div>
+
+        <div class="accordion-content">
+
+          <p>
+            Relevant previous-year examination questions.
+          </p>
+
+        </div>
+
       </div>
 
     </section>
@@ -1767,9 +1977,7 @@ if (studyContent) {
 
         <div>
 
-          <h2>
-            ✅ Step-by-Step Solutions
-          </h2>
+          <h2>✅ Step-by-Step Solutions</h2>
 
           <p>
             Complete solutions with explanations
@@ -1782,23 +1990,74 @@ if (studyContent) {
 
 
       <div class="accordion-item">
-        Basic Question Solutions
-        <span>⌄</span>
+
+        <div class="accordion-title">
+          Basic Question Solutions
+          <span>+</span>
+        </div>
+
+        <div class="accordion-content">
+
+          <p>
+            Detailed step-by-step solutions.
+          </p>
+
+        </div>
+
       </div>
 
-      <div class="accordion-item">
-        Moderate Question Solutions
-        <span>⌄</span>
-      </div>
 
       <div class="accordion-item">
-        Advanced Question Solutions
-        <span>⌄</span>
+
+        <div class="accordion-title">
+          Moderate Question Solutions
+          <span>+</span>
+        </div>
+
+        <div class="accordion-content">
+
+          <p>
+            Detailed conceptual solutions.
+          </p>
+
+        </div>
+
       </div>
 
+
       <div class="accordion-item">
-        Previous Year Solutions
-        <span>⌄</span>
+
+        <div class="accordion-title">
+          Advanced Question Solutions
+          <span>+</span>
+        </div>
+
+        <div class="accordion-content">
+
+          <p>
+            Complete advanced-level solutions.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="accordion-item">
+
+        <div class="accordion-title">
+          Previous Year Solutions
+          <span>+</span>
+        </div>
+
+        <div class="accordion-content">
+
+          <p>
+            Step-by-step previous-year question solutions.
+          </p>
+
+        </div>
+
       </div>
 
     </section>
@@ -1806,15 +2065,13 @@ if (studyContent) {
 
     <!-- QUICK REVISION -->
 
-    <section class="content-box">
+    <section class="content-box" id="revision">
 
       <div class="section-heading">
 
         <div>
 
-          <h2>
-            ⚡ Quick Revision
-          </h2>
+          <h2>⚡ Quick Revision</h2>
 
           <p>
             Last-minute revision of the most important
@@ -1829,23 +2086,50 @@ if (studyContent) {
       <div class="resource-list">
 
         <div class="resource-item">
+
           <span>📌 Key Concepts</span>
-          <button>Review</button>
+
+          <button class="revision-btn"
+                  data-target="notes">
+            Review
+          </button>
+
         </div>
 
+
         <div class="resource-item">
+
           <span>📌 Important Formulas</span>
-          <button>Review</button>
+
+          <button class="revision-btn"
+                  data-target="formulas">
+            Review
+          </button>
+
         </div>
 
+
         <div class="resource-item">
+
           <span>📌 Important Results</span>
-          <button>Review</button>
+
+          <button class="revision-btn"
+                  data-target="proofs">
+            Review
+          </button>
+
         </div>
 
+
         <div class="resource-item">
+
           <span>📌 Common Mistakes</span>
-          <button>Review</button>
+
+          <button class="revision-btn"
+                  data-target="questions">
+            Review
+          </button>
+
         </div>
 
       </div>
@@ -1856,8 +2140,169 @@ if (studyContent) {
 
 }
 
+
 /* =========================================================
-   17. MAKE SURE NAVBAR LEVEL IS ACTIVE
+   17. SMOOTH SCROLL — ROADMAP BUTTONS
+   ========================================================= */
+
+document
+  .querySelectorAll(".roadmap-btn")
+  .forEach(function(button) {
+
+    button.addEventListener("click", function() {
+
+      const targetId =
+        button.getAttribute("data-target");
+
+      const target =
+        document.getElementById(targetId);
+
+      if (target) {
+
+        target.scrollIntoView({
+          behavior: "smooth",
+          block: "start"
+        });
+
+      }
+
+    });
+
+  });
+
+
+/* =========================================================
+   18. QUICK REVISION BUTTONS
+   ========================================================= */
+
+document
+  .querySelectorAll(".revision-btn")
+  .forEach(function(button) {
+
+    button.addEventListener("click", function() {
+
+      const targetId =
+        button.getAttribute("data-target");
+
+      const target =
+        document.getElementById(targetId);
+
+      if (target) {
+
+        target.scrollIntoView({
+          behavior: "smooth",
+          block: "start"
+        });
+
+      }
+
+    });
+
+  });
+
+
+/* =========================================================
+   19. ACCORDION SYSTEM
+   ========================================================= */
+
+document
+  .querySelectorAll(".accordion-title")
+  .forEach(function(title) {
+
+    title.addEventListener("click", function() {
+
+      const item =
+        title.closest(".accordion-item");
+
+      const content =
+        item.querySelector(".accordion-content");
+
+      const icon =
+        title.querySelector("span");
+
+
+      const isOpen =
+        item.classList.contains("open");
+
+
+      /* Close all other accordions */
+
+      document
+        .querySelectorAll(".accordion-item.open")
+        .forEach(function(otherItem) {
+
+          if (otherItem !== item) {
+
+            otherItem.classList.remove("open");
+
+            const otherContent =
+              otherItem.querySelector(
+                ".accordion-content"
+              );
+
+            const otherIcon =
+              otherItem.querySelector(
+                ".accordion-title span"
+              );
+
+            if (otherContent) {
+
+              otherContent.style.maxHeight =
+                null;
+
+            }
+
+            if (otherIcon) {
+
+              otherIcon.textContent =
+                "+";
+
+            }
+
+          }
+
+        });
+
+
+      /* Open / close current */
+
+      if (!isOpen) {
+
+        item.classList.add("open");
+
+        content.style.maxHeight =
+          content.scrollHeight + "px";
+
+        if (icon) {
+
+          icon.textContent =
+            "−";
+
+        }
+
+      } else {
+
+        item.classList.remove("open");
+
+        content.style.maxHeight =
+          null;
+
+        if (icon) {
+
+          icon.textContent =
+            "+";
+
+        }
+
+      }
+
+    });
+
+  });
+
+
+/* =========================================================
+   20. NAVBAR ACTIVE LEVEL
    ========================================================= */
 
 const navLinks =
@@ -1873,15 +2318,22 @@ navLinks.forEach(function(link) {
 
 
   if (
-    (level === "JEE" && href === "jee.html") ||
 
-    (level === "Class 11" && href === "class11.html") ||
+    (level === "JEE" &&
+     href === "jee.html") ||
 
-    (level === "Class 12" && href === "class12.html") ||
+    (level === "Class 11" &&
+     href === "class11.html") ||
 
-    (level === "UG" && href === "ug.html") ||
+    (level === "Class 12" &&
+     href === "class12.html") ||
 
-    (level === "PG" && href === "pg.html")
+    (level === "UG" &&
+     href === "ug.html") ||
+
+    (level === "PG" &&
+     href === "pg.html")
+
   ) {
 
     link.classList.add("active");
@@ -1892,7 +2344,7 @@ navLinks.forEach(function(link) {
 
 
 /* =========================================================
-   18. DEBUG INFORMATION
+   21. DEBUG
    ========================================================= */
 
 console.log(
@@ -1914,6 +2366,73 @@ console.log(
   "Topics:",
   subjectTopics
 );
+
+
+/* =========================================================
+   22. ACCORDION CSS FIX
+   ========================================================= */
+
+const accordionStyle =
+  document.createElement("style");
+
+accordionStyle.textContent = `
+
+  .accordion-item {
+    overflow: hidden;
+    cursor: default;
+  }
+
+  .accordion-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-weight: 700;
+    color: #172033;
+  }
+
+  .accordion-title span {
+    font-size: 22px;
+    font-weight: 400;
+    transition: transform 0.25s ease;
+  }
+
+  .accordion-item.open
+  .accordion-title span {
+    color: #16a9e8;
+  }
+
+  .accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition:
+      max-height 0.35s ease,
+      padding 0.35s ease;
+    padding: 0;
+  }
+
+  .accordion-item.open
+  .accordion-content {
+    padding-top: 15px;
+  }
+
+  .accordion-content p {
+    margin: 0;
+    color: #475569;
+    line-height: 1.7;
+  }
+
+  .roadmap-btn,
+  .revision-btn {
+    cursor: pointer;
+  }
+
+`;
+
+document.head.appendChild(
+  accordionStyle
+);
+
 
 </script>
 
